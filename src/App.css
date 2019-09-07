@@ -1,33 +1,84 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #003142;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+ul.footer-menu-not-list {
+  width: 100%;
+  display: block;
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  float: left;
+}
+footer.brodo-footer
+  ul.brodo-footer-list-grid
+  > li.menu-dropdown
+  ul.footer-menu-not-list
+  li {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+}
+footer.brodo-footer
+  ul.brodo-footer-list-grid
+  > li.menu-dropdown
+  ul.footer-menu-not-list
+  li
+  a,
+footer.brodo-footer
+  ul.brodo-footer-list-grid
+  > li.menu-dropdown
+  ul.footer-menu-not-list
+  li
+  p {
+  color: #fff;
+}
+footer.brodo-footer
+  ul.brodo-footer-list-grid
+  > li.menu-dropdown
+  ul.footer-menu-list {
+  width: 100%;
+  display: block;
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  float: left;
+}
+footer.brodo-footer
+  ul.brodo-footer-list-grid
+  > li.menu-dropdown
+  ul.footer-menu-list
+  li {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+}
+ul.footer-menu-list {
+  width: 100%;
+  display: block;
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  float: left;
+  color: white !important;
+  text-decoration: none;
+}
+ul.footer-menu-list {
+  width: 100%;
+  display: block;
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  float: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cine {
+  color: white;
+  font-size: 16px;
+  background-color: transparent;
 }

@@ -1,14 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
+import Footer from "./components/layout/footer";
 import "./App.css";
+// import Header from "./components/layout/header";
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        Asas
-      </header>
-    </div>
+    <React.Fragment>
+      <Footer />
+    </React.Fragment>
   );
 };
 
