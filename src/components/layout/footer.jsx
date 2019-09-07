@@ -22,7 +22,7 @@ const Footer = () => {
             </Col>
             <Col md={3}>
               <div class="title-brodo-footer-menu text-bold text-left brodo-full-100 display-block rel">
-                <h5>Brodo FootwearBrodo Footwear</h5>
+                <h5>BRODO FOOTWEAR</h5>
 
                 <div
                   class="show-mobile icon-dropdown icon-dropdown-right abs btn-dropdown"
@@ -94,7 +94,7 @@ const Footer = () => {
             </Col>
             <Col md={2}>
               <div class="title-brodo-footer-menu text-bold text-left brodo-full-100 display-block rel">
-                <h5>Legal</h5>
+                <h5>LEGAL</h5>
                 <div
                   class="show-mobile icon-dropdown icon-dropdown-right abs btn-dropdown"
                   id="icon-legal"
@@ -123,7 +123,7 @@ const Footer = () => {
                 </li>
               </ul>
               <div class="title-brodo-footer-menu text-bold text-left brodo-pull-left brodo-full-100 display-block rel">
-                <h5>Lainnya</h5>
+                <h5>LAINNYA</h5>
                 <div
                   class="show-mobile icon-dropdown icon-dropdown-right abs btn-dropdown"
                   id="icon-other"
@@ -157,7 +157,7 @@ const Footer = () => {
             </Col>
             <Col md={2}>
               <div class="title-brodo-footer-menu text-bold text-left brodo-full-100 display-block rel">
-                <h5>Kontak Brodo</h5>
+                <h5>KONTAK BRODO</h5>
               </div>
               <ul class="footer-menu-not-list" style={{ fontSize: "14px" }}>
                 <li>
@@ -169,7 +169,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <p>
-                    <h5>Kontak Brodo</h5>
+                    <span>
+                      <b>Call Center</b>
+                    </span>
+                    <br></br>
                     0811 854 5555<br></br>
                     0888 0808 5555
                   </p>
@@ -177,7 +180,7 @@ const Footer = () => {
                 </li>
               </ul>
             </Col>
-            <Col md={3}>
+            <Col md={3} style={{ align: "center" }}>
               <i
                 class="fa fa-instagram"
                 style={{
