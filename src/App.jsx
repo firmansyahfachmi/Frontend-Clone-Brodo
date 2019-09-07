@@ -15,7 +15,6 @@ const App = () => {
       <Header />
       <Card />
       <Footer />
-      <div style={{ backgroundColor: "silver", height: 1000 }}>a</div>
     </Fragment>
   );
 };
