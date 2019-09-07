@@ -12,22 +12,6 @@ const hover = () => {
     }
 }
 
-const openSearch = () => {
-    let x = document.getElementById("searched");
-    if (x.style.width === "100px") {
-        x.style.width = '200px';
-    } else{
-        x.style.width = '100px';
-    }
-}
-
-const closeSearch = () => {
-    let x = document.getElementById("searched");
-    if (x.style.width === "200px") {
-        x.style.width = '100px';
-    } 
-}
-
 const hoverClose = () => {
     let x = document.getElementById("bodyCategory");
     if (x.style.display === "block") {
@@ -80,8 +64,8 @@ const Header = () => {
                     <Nav.Link href="#pricing" style={{ color: 'white'}}>Tentang Kami</Nav.Link>
                     <Nav.Link href="#pricing" style={{ color: 'white'}}>Toko Kami</Nav.Link>
                 </Nav>
-                <Form inline >
-                    <FormControl type="text" id="searched" onClick={openSearch} onMouseLeave={closeSearch} placeholder="Search" className="mr-sm-1" size="sm" />
+                <Form inline>
+                    <FormControl type="text" id="searched"  placeholder="Search" className="mr-sm-1" size="sm"/>
                     <Button variant="link" style={{ color: 'white', fontSize : 16 }}><i className="fa fa-search"></i></Button>
                     <Button onClick={loginShow} onMouseOver={hoverClose} variant="link" style={{ color: 'white', fontSize: 16}}><i className="fa fa-user"></i></Button>
                     <Button variant="link" style={{ color: 'white', fontSize: 16 }}><i className="fa fa-heart"></i></Button>
