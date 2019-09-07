@@ -12,7 +12,21 @@ const hover = () => {
     }
 }
 
+const openSearch = () => {
+    let x = document.getElementById("searched");
+    if (x.style.width === "100px") {
+        x.style.width = '200px';
+    } else{
+        x.style.width = '100px';
+    }
+}
 
+const closeSearch = () => {
+    let x = document.getElementById("searched");
+    if (x.style.width === "200px") {
+        x.style.width = '100px';
+    } 
+}
 
 const hoverClose = () => {
     let x = document.getElementById("bodyCategory");
@@ -38,13 +52,21 @@ const loginShow= () => {
     }
 }
 
+const openNav = () => {
+    document.getElementById("Sidepanel").style.width = "300px";
+}
+
+const closeNav = () => {
+    document.getElementById("Sidepanel").style.width = "0";
+}
+
 const Header = () => {
     return(
-        <div style={{position:'fixed', width:'100%'}}>
+        <div style={{ width:'100%'}}>
             <Navbar style={{ height: '55px', backgroundColor: 'rgba(0, 0, 0, 0.8)', width:'100%'}}>
                 <Navbar.Brand href="#home" className="col-lg-2 mr-auto" style={{ color: 'white' }}>
                     <img src="https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png" width="100px" alt="logo"/></Navbar.Brand>
-                <Nav className="mr-auto col-lg-5" style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 500, letterSpacing:-0.1}}>
+                <Nav className="mr-auto col-lg-5" style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 500, letterSpacing:-0.1}} > 
                     <Nav.Link href="#home" onMouseOver={hoverClose} className="dropdown" style={{ color: 'white', marginBottom:-7}}>Koleksi
                         <div class="dropdown-content">
                             <Nav.Link href="#" className="collect" style={{color:'black'}}>All</Nav.Link>
@@ -58,14 +80,38 @@ const Header = () => {
                     <Nav.Link href="#pricing" style={{ color: 'white'}}>Tentang Kami</Nav.Link>
                     <Nav.Link href="#pricing" style={{ color: 'white'}}>Toko Kami</Nav.Link>
                 </Nav>
-                <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-1" size="sm" />
-                    <Button variant="link"  style={{ color: 'white', fontSize : 16 }}><i className="fa fa-search"></i></Button>
+                <Form inline >
+                    <FormControl type="text" id="searched" onClick={openSearch} onMouseLeave={closeSearch} placeholder="Search" className="mr-sm-1" size="sm" />
+                    <Button variant="link" style={{ color: 'white', fontSize : 16 }}><i className="fa fa-search"></i></Button>
                     <Button onClick={loginShow} onMouseOver={hoverClose} variant="link" style={{ color: 'white', fontSize: 16}}><i className="fa fa-user"></i></Button>
                     <Button variant="link" style={{ color: 'white', fontSize: 16 }}><i className="fa fa-heart"></i></Button>
-                    <Button variant="link" style={{ color: 'white', fontSize: 16 }}><i className="fa fa-shopping-cart"></i></Button>
+                    <Button variant="link" onClick={openNav} style={{ color: 'white', fontSize: 16 }}><i className="fa fa-shopping-cart"></i></Button>
                 </Form>
-                
+
+                <div id="Sidepanel" className="sidepanel">
+                    <div style={{display:'flex'}} class="topSide">
+                        <div>KERANJANG</div>    
+                        <Nav.Link href="" className="closebtn" onClick={closeNav} style={{ }}>x</Nav.Link>
+                    </div>
+                    <Row className="a">
+                        <Col className="border-bottom">KERANJANG KOSONG</Col>
+                    </Row>
+                    <Row className="total">
+                        
+                        <Col>
+                            <Row style={{marginBottom:10}}>
+                                <Col style={{ border: '1px solid black', padding: 6 }}>Total
+                                    <span style={{ float:'right'}}>Rp</span>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col style={{padding:0}}><Button block>BELANJA SEKARANG BRO</Button></Col>
+                            </Row>
+                        </Col>
+                        
+                    </Row>
+                    
+                </div>
             </Navbar>
 
             <Nav id="bodyCategory" style={{ fontSize: 16 }} onMouseLeave={hoverClose}>
