@@ -1,14 +1,17 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, {Fragment} from "react";
+// import Route from 'react-router-dom'
+
+import Header from './components/layout/header.jsx'
+
 import "./App.css";
 
 const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        Asas
-      </header>
-    </div>
+    <Fragment>
+      <Header/>
+      <div style={{backgroundColor:'silver',height:1000}}>a</div>
+    </Fragment>
   );
 };
 
