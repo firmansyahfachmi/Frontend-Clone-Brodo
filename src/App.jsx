@@ -1,5 +1,3 @@
-
-
 import Footer from "./components/layout/footer";
 import Card from "./components/layout/Card";
 
@@ -19,7 +17,6 @@ const App = () => {
       <Header/>
       <Card />
       <Footer />
-      <div style={{backgroundColor:'silver',height:1000}}>a</div>
     </Fragment>
 
   );
