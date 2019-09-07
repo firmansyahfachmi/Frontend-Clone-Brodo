@@ -1,0 +1,37 @@
+.icon-right{
+    color: white;
+}
+
+.dropdown-content {
+    margin-top: 15px;
+    display: none;  
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1); */
+    z-index: 1;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#bodyCategory{
+    background-color : #f1f1f1;
+    height: auto;
+    display:none;
+    padding: 15px 12px 12px 12px;
+}
+
+#sub{
+    display: flex;
+}
+
+
