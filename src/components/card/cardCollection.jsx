@@ -6,7 +6,7 @@ import './card.css'
 const cardCollection = () => {
     return (
         <Fragment>
-            <Row style={{marginTop:30}}>
+            <Row style={{marginTop:30, letterSpacing:0}}>
                 <Col>Menampilkan 12 produk (<b>12</b> dari <b>178</b>)</Col>
             </Row> 
             <Row>

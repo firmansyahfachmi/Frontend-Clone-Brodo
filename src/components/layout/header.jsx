@@ -28,6 +28,16 @@ const loginClose = () => {
     
 }
 
+const openSearch = () => {
+     document.getElementById("searched").style.width = "160px";
+     document.getElementById("searched").style.padding = "5px";
+}
+
+const closeSearch = () => {
+     document.getElementById("searched").style.width = "0px";
+     document.getElementById("searched").style.padding = "0px";
+}
+
 
 const loginShow= () => {
     let x = document.getElementById("login");
@@ -51,32 +61,40 @@ const closeNav = () => {
     document.getElementById('over').style.display = 'none'
 }
 
-const Header = () => {
+
+const Header = (props) => {
+
+    let backColor = (props.headType === 'white') ?  'rgb(255, 255, 255)' : 'rgba(0, 0, 0, 0.8)'
+    let color = (props.headType === 'white') ?  '#333333' : 'rgb(255, 255, 255)'
+    let image = (props.headType === 'white') ?  'https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-active.png' : 'https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png'
+    let border = (props.headType === 'white') ?  'border' : ''
+
     return(
         <div style={{position:'fixed', width:'100%', zIndex : "6"}}>
-            <Navbar id="navbare" style={{ height: '55px', backgroundColor: 'rgba(0, 0, 0, 0.8)', width:'100%', zIndex:'2'}}>
-                <Navbar.Brand href="#home" className="col-lg-2 mr-auto" style={{ color: 'white' }}>
-                    <img src="https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png" width="100px" alt="logo"/></Navbar.Brand>
-                <Nav className="mr-auto col-lg-5" style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 500, letterSpacing:-0.1}} > 
-                    <Nav.Link href="#home" onMouseOver={hoverClose} className="dropdown" style={{ color: 'white', marginBottom:-7}}>Koleksi
+            <Navbar id="navbare" className={border} style={{ height: '55px', backgroundColor: backColor, width:'100%', zIndex:'2'}}>
+                <Navbar.Brand href="/" className="col-lg-2 mr-auto">
+                    <img src={image} width="100px" alt="logo"/></Navbar.Brand>
+                <Nav className="mr-auto col-lg-5" style={{ position:'fixed',left:'29%',display: 'flex', justifyContent: 'space-between', fontWeight: 500, letterSpacing:-0.1}} > 
+                    <Nav.Link href="/collection" onMouseOver={hoverClose} className="dropdown" style={{ color:color, marginBottom:-7}}>Koleksi
                         <div class="dropdown-content border">
-                            <Nav.Link href="#" className="collect" style={{color:'black'}}>All</Nav.Link>
+                            <Nav.Link href="/collection" className="collect" style={{color:'black'}}>All</Nav.Link>
                             <Nav.Link href="#" className="collect" style={{ color: 'black' }}>Terbaru</Nav.Link>
                             <Nav.Link href="#" className="collect" style={{ color: 'black' }}>Best Seller</Nav.Link>
                         </div>
                     </Nav.Link>
-                    <Nav.Link onMouseOver={hover} onMouse  style={{ color: 'white', marginBottom: -7}}>Kategori</Nav.Link>
+                    <Nav.Link onMouseOver={hover} style={{ color:color, marginBottom: -7}}>Kategori</Nav.Link>
 
-                    <Nav.Link href="#pricing" style={{ color: 'white'}}>Jurnal</Nav.Link>
-                    <Nav.Link href="#pricing" style={{ color: 'white'}}>Tentang Kami</Nav.Link>
-                    <Nav.Link href="#pricing" style={{ color: 'white'}}>Toko Kami</Nav.Link>
+                    <Nav.Link href="#pricing" style={{ color:color}}>Jurnal</Nav.Link>
+                    <Nav.Link href="#pricing" style={{ color:color}}>Tentang Kami</Nav.Link>
+                    <Nav.Link href="#pricing" style={{ color:color}}>Toko Kami</Nav.Link>
                 </Nav>
+
                 <Form inline>
-                    <FormControl type="text" id="searched"  placeholder="Search" className="mr-sm-1" size="sm"/>
-                    <Button variant="link" style={{ color: 'white', fontSize : 16 }}><i className="fa fa-search"></i></Button>
-                    <Button onClick={loginShow} onMouseOver={hoverClose} variant="link" style={{ color: 'white', fontSize: 16}}><i className="fa fa-user"></i></Button>
-                    <Button variant="link" style={{ color: 'white', fontSize: 16 }}><i className="fa fa-heart"></i></Button>
-                    <Button variant="link" onClick={openNav} style={{ color: 'white', fontSize: 16 }}><i className="fa fa-shopping-cart"></i></Button>
+                    <FormControl type="text" onMouseLeave={closeSearch} id="searched" placeholder="Search" className="mr-sm-1" size="sm"/>
+                    <Button variant="link" style={{ color:color, fontSize : 16 }}><i className="fa fa-search" onClick={openSearch}></i></Button>
+                    <Button onClick={loginShow} onMouseOver={hoverClose} variant="link" style={{ color:color, fontSize: 16}}><i className="fa fa-user"></i></Button>
+                    <Button variant="link" style={{ color:color, fontSize: 16 }}><i className="fa fa-heart"></i></Button>
+                    <Button variant="link" onClick={openNav} style={{ color:color, fontSize: 16 }}><i className="fa fa-shopping-cart"></i></Button>
                 </Form>
 
                 <div id="Sidepanel" className="sidepanel">

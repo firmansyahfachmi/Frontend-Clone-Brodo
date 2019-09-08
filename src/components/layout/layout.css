@@ -46,7 +46,7 @@
   transition: 0.3s;
   position:fixed;
   z-index: 2;
-  right: 30px;
+  right: 10px;
   top:55px;
 }
 
@@ -141,6 +141,21 @@
 }
 
 #searched{
-    width: 110px;
+    width: 0px;
+    padding:0px;
+    border:0;
     transition: 0.3s;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0,49,100);
 }
