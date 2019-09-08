@@ -55,7 +55,7 @@ const CardBar = () => {
             </Card>
           </Col>
         </Row>
-      </Container>
+      </Container>   
     </div>
   );
 };
