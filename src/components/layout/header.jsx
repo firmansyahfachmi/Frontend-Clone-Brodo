@@ -23,7 +23,9 @@ const loginClose = () => {
     let x = document.getElementById("login");
     if (x.style.display === "block") {
         x.style.display = "none";
+        document.getElementById('over2').style.display = 'none'
     } 
+    
 }
 
 
@@ -31,9 +33,12 @@ const loginShow= () => {
     let x = document.getElementById("login");
     if (x.style.display === "block") {
         x.style.display = "none";
+        document.getElementById('over2').style.display = 'none'
     } else {
         x.style.display = "block";
+        document.getElementById('over2').style.display = 'initial'
     }
+    
 }
 
 const openNav = () => {
@@ -49,18 +54,18 @@ const closeNav = () => {
 const Header = () => {
     return(
         <div style={{position:'fixed', width:'100%', zIndex : "6"}}>
-            <Navbar style={{ height: '55px', backgroundColor: 'rgba(0, 0, 0, 0.8)', width:'100%'}}>
+            <Navbar id="navbare" style={{ height: '55px', backgroundColor: 'rgba(0, 0, 0, 0.8)', width:'100%', zIndex:'2'}}>
                 <Navbar.Brand href="#home" className="col-lg-2 mr-auto" style={{ color: 'white' }}>
                     <img src="https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png" width="100px" alt="logo"/></Navbar.Brand>
                 <Nav className="mr-auto col-lg-5" style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 500, letterSpacing:-0.1}} > 
                     <Nav.Link href="#home" onMouseOver={hoverClose} className="dropdown" style={{ color: 'white', marginBottom:-7}}>Koleksi
-                        <div class="dropdown-content">
+                        <div class="dropdown-content border">
                             <Nav.Link href="#" className="collect" style={{color:'black'}}>All</Nav.Link>
                             <Nav.Link href="#" className="collect" style={{ color: 'black' }}>Terbaru</Nav.Link>
                             <Nav.Link href="#" className="collect" style={{ color: 'black' }}>Best Seller</Nav.Link>
                         </div>
                     </Nav.Link>
-                    <Nav.Link onMouseOver={hover}  style={{ color: 'white', marginBottom: -7}}>Kategori</Nav.Link>
+                    <Nav.Link onMouseOver={hover} onMouse  style={{ color: 'white', marginBottom: -7}}>Kategori</Nav.Link>
 
                     <Nav.Link href="#pricing" style={{ color: 'white'}}>Jurnal</Nav.Link>
                     <Nav.Link href="#pricing" style={{ color: 'white'}}>Tentang Kami</Nav.Link>
@@ -99,9 +104,10 @@ const Header = () => {
                     
                 </div>
                 <div id="over" className="overlay"></div>
+                <div id="over2" className="overlay2"></div>
             </Navbar>
 
-            <Nav id="bodyCategory" style={{ fontSize: 16 }} onMouseLeave={hoverClose}>
+            <Nav id="bodyCategory" className="border" style={{ fontSize: 16 }} onMouseLeave={hoverClose}>
                     <div id="sub">
                         <Nav.Link className="col-lg-1 linkNav"><b>Sale</b></Nav.Link>
                         <div className="col-lg-2">
@@ -138,7 +144,7 @@ const Header = () => {
                     </div>
                 </Nav>
 
-                <div id="login" onMouseLeave={loginClose}>
+                <div id="login" className="border" onMouseLeave={loginClose}>
                     <Row>
                         <Col style={{paddingBottom:20}}>
                             <div style={{fontWeight:600}}><i className="fa fa-user" style={{fontSize:28}}></i>
