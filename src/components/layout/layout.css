@@ -110,21 +110,22 @@
   top: 0;
   padding: 15px;
   font-weight: 600;
-
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.7);
 }
 
-#searched{
-    width: 110px;
-    transition: 0.3s;
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#searched {
+  width: 110px;
+  transition: 0.3s;
 }
 
 #searched {
