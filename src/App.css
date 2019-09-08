@@ -1,10 +1,10 @@
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: #003142;
   color: white;
+  z-index: 0;
 }
 
 ul.footer-menu-not-list {
@@ -86,4 +86,3 @@ ul.footer-menu-list {
 .card-collection {
   margin: 10px;
 }
-

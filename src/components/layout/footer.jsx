@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <React.Fragment>
       <div className="footer">
-        <Container className="mt-3 mb-3" style={{ marginTop: "4" }}>
+        <Container className="mt-3" style={{ marginTop: "4" }}>
           <Row className="pt-4">
             <Col md={2}>
               <a href="https://bro.do" class="testing">
