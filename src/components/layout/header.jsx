@@ -46,7 +46,7 @@ const closeNav = () => {
 
 const Header = () => {
     return(
-        <div style={{position:'fixed', width:'100%', zIndex : "1"}}>
+        <div style={{position:'fixed', width:'100%', zIndex : "6"}}>
             <Navbar style={{ height: '55px', backgroundColor: 'rgba(0, 0, 0, 0.8)', width:'100%'}}>
                 <Navbar.Brand href="#home" className="col-lg-2 mr-auto" style={{ color: 'white' }}>
                     <img src="https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png" width="100px" alt="logo"/></Navbar.Brand>

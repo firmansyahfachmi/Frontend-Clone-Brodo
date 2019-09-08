@@ -180,7 +180,7 @@ const Footer = () => {
                 </li>
               </ul>
             </Col>
-            <Col md={3} style={{ align: "center" }}>
+            <Col md={3} align="right">
               <i
                 class="fa fa-instagram"
                 style={{
