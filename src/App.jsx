@@ -28,7 +28,7 @@ const App = () => {
             );
           }}
         />
-        <Route path="/collection"
+        <Route path="/collection/:name"
             exact
             render={() => {
               return(

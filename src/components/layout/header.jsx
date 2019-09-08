@@ -77,9 +77,9 @@ const Header = (props) => {
                 <Nav className="mr-auto col-lg-5" style={{ position:'fixed',left:'29%',display: 'flex', justifyContent: 'space-between', fontWeight: 500, letterSpacing:-0.1}} > 
                     <Nav.Link href="/collection" onMouseOver={hoverClose} className="dropdown" style={{ color:color, marginBottom:-7}}>Koleksi
                         <div className="dropdown-content border">
-                            <Nav.Link href="/collection" className="collect" style={{color:'black'}}>All</Nav.Link>
-                            <Nav.Link href="#" className="collect" style={{ color: 'black' }}>Terbaru</Nav.Link>
-                            <Nav.Link href="#" className="collect" style={{ color: 'black' }}>Best Seller</Nav.Link>
+                            <Nav.Link href="/collection/all" className="collect" style={{color:'black'}}>All</Nav.Link>
+                            <Nav.Link href="/collection/new product" className="collect" style={{ color: 'black' }}>Terbaru</Nav.Link>
+                            <Nav.Link href="/collection/best seller" className="collect" style={{ color: 'black' }}>Best Seller</Nav.Link>
                         </div>
                     </Nav.Link>
                     <Nav.Link onMouseOver={hover} style={{ color:color, marginBottom: -7}}>Kategori</Nav.Link>

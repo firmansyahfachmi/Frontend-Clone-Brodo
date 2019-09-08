@@ -17,7 +17,10 @@ class Collection extends Component {
     }
 
     componentDidMount = async () => {
-        await this.props.dispatch(getProducts())
+        
+        let param = this.props;
+        
+        await this.props.dispatch(getProducts(param))
             .then(res => {
                 this.setState({
                     data: this.props.data
@@ -26,7 +29,7 @@ class Collection extends Component {
     }
 
     render(){
-        console.log("as",this.props.data)
+        
         return(
             
             <div className="collection">

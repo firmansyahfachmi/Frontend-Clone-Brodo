@@ -45,7 +45,7 @@ const cardCollection = (props) => {
             
             <Row style={{ marginTop: 40}}>
                 {props.products.map(products =>(
-                <Col md={4} style={{marginBottom:30}}>
+                <Col md={4} style={{marginBottom:30}} key={products.id}>
                     <Card className="cardCollection">
                         <Card.Img variant="top" src={products.image} alt="Brodo x Rafheoo Backpack Black" />
                         <Card.Body>
