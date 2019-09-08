@@ -16,7 +16,7 @@ const detailBar = () => {
         <Container className="mt-4">
           <Row>
             <Col className="p-4" md={5}>
-              <div className="zoom-img">
+              <div>
                 <img
                   src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/870-1-ok-1.jpg"
                   alt=""
