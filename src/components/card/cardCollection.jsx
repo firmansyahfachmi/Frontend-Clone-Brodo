@@ -3,12 +3,14 @@ import { Card, Col, Row, ButtonGroup, Button, Form} from "react-bootstrap";
 
 import './card.css'
 
-const cardCollection = () => {
+const cardCollection = (props) => {
+    console.log("col",props.products)
     return (
         <Fragment>
             <Row style={{marginTop:30, letterSpacing:0}}>
-                <Col>Menampilkan 12 produk (<b>12</b> dari <b>178</b>)</Col>
+                <Col>Menampilkan 12 produk (<b>12</b> dari <b>{props.products.length}</b>)</Col>
             </Row> 
+
             <Row>
                 <Col>
                     <ButtonGroup className="mt-3">
@@ -40,20 +42,23 @@ const cardCollection = () => {
                     </Form.Row>
                 </Col>
             </Row>
+            
             <Row style={{ marginTop: 40}}>
+                {props.products.map(products =>(
                 <Col md={4} style={{marginBottom:30}}>
                     <Card className="cardCollection">
-                        <Card.Img variant="top" src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/284-1-min.jpg" alt="Brodo x Rafheoo Backpack Black" />
+                        <Card.Img variant="top" src={products.image} alt="Brodo x Rafheoo Backpack Black" />
                         <Card.Body>
-                            <Card.Title className="pb-1" style={{fontSize:15}}>Brodo x Rafheoo Backpack Black</Card.Title>
+                            <Card.Title className="pb-1" style={{fontSize:15}}>{products.name}</Card.Title>
                             <Card.Text className="border-top pt-2" style={{ color:'#e06100', fontWeight:'600', fontSize:18}}>
-                                Rp<span>525.000</span>
+                                Rp <span>{products.price}</span>
                             </Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>
-
+                ))} 
             </Row>
+            
         </Fragment>
     );
 };

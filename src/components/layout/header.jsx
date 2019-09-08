@@ -76,7 +76,7 @@ const Header = (props) => {
                     <img src={image} width="100px" alt="logo"/></Navbar.Brand>
                 <Nav className="mr-auto col-lg-5" style={{ position:'fixed',left:'29%',display: 'flex', justifyContent: 'space-between', fontWeight: 500, letterSpacing:-0.1}} > 
                     <Nav.Link href="/collection" onMouseOver={hoverClose} className="dropdown" style={{ color:color, marginBottom:-7}}>Koleksi
-                        <div class="dropdown-content border">
+                        <div className="dropdown-content border">
                             <Nav.Link href="/collection" className="collect" style={{color:'black'}}>All</Nav.Link>
                             <Nav.Link href="#" className="collect" style={{ color: 'black' }}>Terbaru</Nav.Link>
                             <Nav.Link href="#" className="collect" style={{ color: 'black' }}>Best Seller</Nav.Link>
@@ -98,7 +98,7 @@ const Header = (props) => {
                 </Form>
 
                 <div id="Sidepanel" className="sidepanel">
-                    <div style={{display:'flex'}} class="topSide">
+                    <div style={{display:'flex'}} className="topSide">
                         <div>KERANJANG</div>    
                         <Nav.Link href="" className="closebtn" onClick={closeNav} style={{ }}>x</Nav.Link>
                     </div>
