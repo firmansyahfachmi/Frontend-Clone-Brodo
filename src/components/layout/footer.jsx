@@ -8,7 +8,7 @@ const Footer = () => {
         <Container className="pt-3" style={{ marginTop: "4" }}>
           <Row className="pt-4">
             <Col md={2}>
-              <a href="https://bro.do" class="testing">
+              <a href="https://bro.do" className="testing">
                 <img
                   src="https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png"
                   alt="icon"
@@ -21,18 +21,18 @@ const Footer = () => {
               </a>
             </Col>
             <Col md={3}>
-              <div class="title-brodo-footer-menu text-bold text-left brodo-full-100 display-block rel">
+              <div className="title-brodo-footer-menu text-bold text-left brodo-full-100 display-block rel">
                 <h5>BRODO FOOTWEAR</h5>
 
                 <div
-                  class="show-mobile icon-dropdown icon-dropdown-right abs btn-dropdown"
+                  className="show-mobile icon-dropdown icon-dropdown-right abs btn-dropdown"
                   id="icon-brodo-footwear"
                 >
-                  <span class="rel icon-arrow icon-change-model-size"></span>
+                  <span className="rel icon-arrow icon-change-model-size"></span>
                 </div>
               </div>
               <ul
-                class="footer-menu-list"
+                className="footer-menu-list"
                 id="brodo-footwear"
                 style={{ color: "white" }}
               >
@@ -93,16 +93,16 @@ const Footer = () => {
               </ul>
             </Col>
             <Col md={2}>
-              <div class="title-brodo-footer-menu text-bold text-left brodo-full-100 display-block rel">
+              <div className="title-brodo-footer-menu text-bold text-left brodo-full-100 display-block rel">
                 <h5>LEGAL</h5>
                 <div
-                  class="show-mobile icon-dropdown icon-dropdown-right abs btn-dropdown"
+                  className="show-mobile icon-dropdown icon-dropdown-right abs btn-dropdown"
                   id="icon-legal"
                 >
-                  <span class="rel icon-arrow icon-change-model-size"></span>
+                  <span className="rel icon-arrow icon-change-model-size"></span>
                 </div>
               </div>
-              <ul class="footer-menu-list" id="legal">
+              <ul className="footer-menu-list" id="legal">
                 <li>
                   <a
                     className="cine"
@@ -122,19 +122,19 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              <div class="title-brodo-footer-menu text-bold text-left brodo-pull-left brodo-full-100 display-block rel">
+              <div className="title-brodo-footer-menu text-bold text-left brodo-pull-left brodo-full-100 display-block rel">
                 <h5>LAINNYA</h5>
                 <div
-                  class="show-mobile icon-dropdown icon-dropdown-right abs btn-dropdown"
+                  className="show-mobile icon-dropdown icon-dropdown-right abs btn-dropdown"
                   id="icon-other"
                 >
                   <span
                     id="icon-other"
-                    class="rel icon-arrow icon-change-model-size"
+                    className="rel icon-arrow icon-change-model-size"
                   ></span>
                 </div>
               </div>
-              <ul class="footer-menu-list" id="other">
+              <ul className="footer-menu-list" id="other">
                 <li>
                   <a
                     className="cine"
@@ -156,10 +156,10 @@ const Footer = () => {
               </ul>
             </Col>
             <Col md={2}>
-              <div class="title-brodo-footer-menu text-bold text-left brodo-full-100 display-block rel">
+              <div className="title-brodo-footer-menu text-bold text-left brodo-full-100 display-block rel">
                 <h5>KONTAK BRODO</h5>
               </div>
-              <ul class="footer-menu-not-list" style={{ fontSize: "14px" }}>
+              <ul className="footer-menu-not-list" style={{ fontSize: "14px" }}>
                 <li>
                   <p>
                     Customer service kami dapat dihubungi 7 hari dalam seminggu,
@@ -182,28 +182,28 @@ const Footer = () => {
             </Col>
             <Col md={3} align="right">
               <i
-                class="fa fa-instagram"
+                className="fa fa-instagram"
                 style={{
                   fontSize: "35px",
                   marginRight: "10px"
                 }}
               ></i>
               <i
-                class="fa fa-facebook-square"
+                className="fa fa-facebook-square"
                 style={{
                   fontSize: "35px",
                   marginRight: "10px"
                 }}
               ></i>
               <i
-                class="fa fa-youtube-play"
+                className="fa fa-youtube-play"
                 style={{
                   fontSize: "35px",
                   marginRight: "10px"
                 }}
               ></i>
               <i
-                class="fa fa-twitter-square"
+                className="fa fa-twitter-square"
                 style={{
                   fontSize: "35px",
                   marginRight: "10px"

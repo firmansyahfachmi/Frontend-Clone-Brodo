@@ -54,7 +54,7 @@ const Header = () => {
                     <img src="https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png" width="100px" alt="logo"/></Navbar.Brand>
                 <Nav className="mr-auto col-lg-5" style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 500, letterSpacing:-0.1}} > 
                     <Nav.Link href="#home" onMouseOver={hoverClose} className="dropdown" style={{ color: 'white', marginBottom:-7}}>Koleksi
-                        <div class="dropdown-content">
+                        <div className="dropdown-content">
                             <Nav.Link href="#" className="collect" style={{color:'black'}}>All</Nav.Link>
                             <Nav.Link href="#" className="collect" style={{ color: 'black' }}>Terbaru</Nav.Link>
                             <Nav.Link href="#" className="collect" style={{ color: 'black' }}>Best Seller</Nav.Link>
@@ -75,7 +75,7 @@ const Header = () => {
                 </Form>
 
                 <div id="Sidepanel" className="sidepanel">
-                    <div style={{display:'flex'}} class="topSide">
+                    <div style={{display:'flex'}} className="topSide">
                         <div>KERANJANG</div>    
                         <Nav.Link href="" className="closebtn" onClick={closeNav} style={{ }}>x</Nav.Link>
                     </div>
