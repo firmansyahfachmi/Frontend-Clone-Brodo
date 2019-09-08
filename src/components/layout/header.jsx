@@ -38,10 +38,12 @@ const loginShow= () => {
 
 const openNav = () => {
     document.getElementById("Sidepanel").style.width = "300px";
+    document.getElementById('over').style.display = 'initial'
 }
 
 const closeNav = () => {
     document.getElementById("Sidepanel").style.width = "0";
+    document.getElementById('over').style.display = 'none'
 }
 
 const Header = () => {
@@ -96,6 +98,7 @@ const Header = () => {
                     </Row>
                     
                 </div>
+                <div id="over" className="overlay"></div>
             </Navbar>
 
             <Nav id="bodyCategory" style={{ fontSize: 16 }} onMouseLeave={hoverClose}>
