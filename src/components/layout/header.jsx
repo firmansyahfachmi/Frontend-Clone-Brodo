@@ -38,15 +38,17 @@ const loginShow= () => {
 
 const openNav = () => {
     document.getElementById("Sidepanel").style.width = "300px";
+    document.getElementById('over').style.display = 'initial'
 }
 
 const closeNav = () => {
     document.getElementById("Sidepanel").style.width = "0";
+    document.getElementById('over').style.display = 'none'
 }
 
 const Header = () => {
     return(
-        <div style={{position:'fixed', width:'100%'}}>
+        <div style={{position:'fixed', width:'100%', zIndex:6}}>
             <Navbar style={{ height: '55px', backgroundColor: 'rgba(0, 0, 0, 0.8)', width:'100%'}}>
                 <Navbar.Brand href="#home" className="col-lg-2 mr-auto" style={{ color: 'white' }}>
                     <img src="https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png" width="100px" alt="logo"/></Navbar.Brand>
@@ -96,6 +98,7 @@ const Header = () => {
                     </Row>
                     
                 </div>
+                <div id="over" className="overlay"></div>
             </Navbar>
 
             <Nav id="bodyCategory" style={{ fontSize: 16 }} onMouseLeave={hoverClose}>
