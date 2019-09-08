@@ -1,63 +1,71 @@
-import React from "react";
-import { Card, Col, Row, Container } from "react-bootstrap";
+import React, { Fragment } from "react";
+import { CardDeck, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const CardBar = () => {
-  return (
-    <div>
-      <Container>
-        <Row>
-          <Col md={4}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-          </Col>
-          <Col md={4}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-          </Col>
-          <Col md={4}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-          </Col>
-        </Row>
-      </Container>   
-    </div>
-  );
+const cardBar = props => {
+  const type = props.type;
+  switch (type) {
+    case "card":
+      return (
+        <Fragment>
+          <div className="pl-3 pr-3">
+            <CardDeck style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+              <Card>
+                <Link to="/home">
+                  <Card.Img
+                    variant="top"
+                    src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/333-ez-big-banner.jpg"
+                  />
+                </Link>
+              </Card>
+              <Card>
+                <Link to="/home">
+                  <Card.Img
+                    variant="top"
+                    src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/793-brodotimekaaeepr.jpg"
+                  />
+                </Link>
+              </Card>
+            </CardDeck>
+          </div>
+        </Fragment>
+      );
+    case "card1":
+      return (
+        <Fragment>
+          <div className="pl-3 pr-3">
+            <CardDeck style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+              <Card>
+                <Link to="/home">
+                  <Card.Img
+                    variant="top"
+                    src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/490-signore-low-series-banner-kecil.jpg"
+                  />
+                </Link>
+              </Card>
+              <Card>
+                <Link to="/home">
+                  <Card.Img
+                    variant="top"
+                    src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/373-raijin-fujin.jpg"
+                  />
+                </Link>
+              </Card>
+              <Card>
+                <Link to="/home">
+                  <Card.Img
+                    variant="top"
+                    src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/760-boots-banner-kecil.jpg"
+                  />
+                </Link>
+              </Card>
+            </CardDeck>
+          </div>
+        </Fragment>
+      );
+    default:
+      return <h1>Page Not found</h1>;
+  }
 };
 
-export default CardBar;
+export default cardBar;

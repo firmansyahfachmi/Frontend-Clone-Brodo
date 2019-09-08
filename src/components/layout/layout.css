@@ -1,118 +1,115 @@
-.icon-right{
-    color: white;
+.icon-right {
+  color: white;
 }
 
 .dropdown-content {
-    margin-top: 15px;
-    display: none;  
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1); */
-    z-index: 1;
+  margin-top: 15px;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1); */
+  z-index: 1;
 }
-
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
-
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
-#bodyCategory{
-    background-color : #fff;
-    height: auto;
-    display:none;
-    padding: 15px 12px 12px 12px;
-    transition: 0.3s;
+#bodyCategory {
+  background-color: #fff;
+  height: auto;
+  display: none;
+  padding: 15px 12px 12px 12px;
+  transition: 0.3s;
 }
 
-#sub{
-    display: flex;
+#sub {
+  display: flex;
 }
 
-#login{
-    display:none;
-    height:auto;
-    background-color:#fff;
-    width:25%;
-    float:right;
-    margin-right:20px;
-    padding: 40px 20px 0px 20px;
-    transition: 0.3s;
+#login {
+  display: none;
+  height: auto;
+  background-color: #fff;
+  width: 25%;
+  float: right;
+  margin-right: 20px;
+  padding: 40px 20px 0px 20px;
+  transition: 0.3s;
 }
 
-.linkNav{
-    color: black
+.linkNav {
+  color: black;
 }
 
-.linkNav:hover{
-    color:rgb(0, 87, 128);
+.linkNav:hover {
+  color: rgb(0, 87, 128);
 }
 
-.collect:hover{
-    background-color: whitesmoke;
-    color: black;
+.collect:hover {
+  background-color: whitesmoke;
+  color: black;
 }
 
 .sidepanel {
-    width: 0;
-    position: fixed;
-    z-index: 5;
-    height: 100%;
-    top: 0;
-    right: 0;
-    background-color: #fff;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 70px;
+  width: 0;
+  position: fixed;
+  z-index: 5;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 70px;
 }
 
 .a {
-    padding: 8px 30px 8px 30px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    text-align:center;
+  padding: 8px 30px 8px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
 }
 
-.total{
-    padding: 10px 0px 20px 30px;
-    font-size: 15px;
-    color: #000;
-    display: block;
-    transition: 0.3s;
-    font-weight: 500;
-    width:100%;
-    position: absolute;
-    bottom: 0;
+.total {
+  padding: 10px 0px 20px 30px;
+  font-size: 15px;
+  color: #000;
+  display: block;
+  transition: 0.3s;
+  font-weight: 500;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .closebtn {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    font-size: 24px;
-    color:white
-} 
-
-.topSide{
-    background-color: rgb(0, 87, 128);
-    width:100%;
-    height: 55px;
-    text-align:right;
-    color:white;
-    position: absolute;
-    top:0;
-    padding:15px;
-    font-weight:600;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 24px;
+  color: white;
 }
+
+.topSide {
+  background-color: rgb(0, 87, 128);
+  width: 100%;
+  height: 55px;
+  text-align: right;
+  color: white;
+  position: absolute;
+  top: 0;
+  padding: 15px;
+  font-weight: 600;
 
 .overlay {
     display: none;
@@ -125,9 +122,12 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-
 #searched{
     width: 110px;
     transition: 0.3s;
 }
 
+#searched {
+  width: 110px;
+  transition: 0.3s;
+}
