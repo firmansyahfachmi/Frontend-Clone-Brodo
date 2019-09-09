@@ -43,7 +43,12 @@ const App = () => {
         path="/product"
         exact
         render={() => {
-          return <Detail />;
+          return (
+            <Fragment>
+              <Header headType="white" />
+              <Detail />
+            </Fragment>
+          )
         }}
       />
         <Footer />
