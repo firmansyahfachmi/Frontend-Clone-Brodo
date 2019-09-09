@@ -9,7 +9,7 @@ const Footer = () => {
         <Container className="pt-3" style={{ marginTop: "4" }}>
           <Row className="pt-4">
             <Col md={2}>
-              <Link to="https://bro.do" className="testing">
+              <Link to="/" className="testing">
                 <img
                   src="https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png"
                   alt="icon"
@@ -40,7 +40,7 @@ const Footer = () => {
                 <li>
                   <Link
                     className="cine"
-                    to="https://bro.do/how-to-order"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Cara Pemesanan
@@ -49,7 +49,7 @@ const Footer = () => {
                 <li>
                   <Link
                     className="cine"
-                    to="https://bro.do/confirmation-payment"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Konfirmasi Pembayaran
@@ -58,7 +58,7 @@ const Footer = () => {
                 <li>
                   <Link
                     className="cine"
-                    to="https://bro.do/return-exchange/term"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Pengembalian &amp; Penukaran
@@ -67,7 +67,7 @@ const Footer = () => {
                 <li>
                   <Link
                     className="cine"
-                    to="https://bro.do/faq"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Bantuan &amp; Saran
@@ -76,7 +76,7 @@ const Footer = () => {
                 <li>
                   <Link
                     className="cine"
-                    to="https://bro.do/contact-us"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Hubungi Kami
@@ -85,7 +85,7 @@ const Footer = () => {
                 <li>
                   <Link
                     className="cine"
-                    to="https://bro.do/testimonial"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Testimonial
@@ -107,7 +107,7 @@ const Footer = () => {
                 <li>
                   <Link
                     className="cine"
-                    to="https://bro.do/term-and-condition"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Aturan Penggunaan
@@ -116,7 +116,7 @@ const Footer = () => {
                 <li>
                   <Link
                     className="cine"
-                    to="https://bro.do/privacy-policy"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Kebijakan Privasi
@@ -139,7 +139,7 @@ const Footer = () => {
                 <li>
                   <Link
                     className="cine"
-                    to="https://jurnal.bro.do"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Jurnal
@@ -148,7 +148,7 @@ const Footer = () => {
                 <li>
                   <Link
                     className="cine"
-                    to="https://bro.do/videos"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Halaman Video

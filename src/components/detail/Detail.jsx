@@ -91,11 +91,11 @@ const detailBar = () => {
                     <option selected disabled>
                       PILIH KOTA
                     </option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>Malang</option>
+                    <option>Surabaya</option>
+                    <option>DI Yogyakarta</option>
+                    <option>Jakarta</option>
+                    <option>Bandung</option>
                   </Form.Control>
                 </Form.Group>
               </Form>
