@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
         <Container className="pt-3" style={{ marginTop: "4" }}>
           <Row className="pt-4">
             <Col md={2}>
-              <a href="https://bro.do" className="testing">
+              <Link to="/" className="testing">
                 <img
                   src="https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png"
                   alt="icon"
@@ -18,7 +19,7 @@ const Footer = () => {
                     height: "41px !important"
                   }}
                 />
-              </a>
+              </Link>
             </Col>
             <Col md={3}>
               <div className="title-brodo-footer-menu text-bold text-left brodo-full-100 display-block rel">
@@ -37,58 +38,58 @@ const Footer = () => {
                 style={{ color: "white" }}
               >
                 <li>
-                  <a
+                  <Link
                     className="cine"
-                    href="https://bro.do/how-to-order"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Cara Pemesanan
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="cine"
-                    href="https://bro.do/confirmation-payment"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Konfirmasi Pembayaran
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="cine"
-                    href="https://bro.do/return-exchange/term"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Pengembalian &amp; Penukaran
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="cine"
-                    href="https://bro.do/faq"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Bantuan &amp; Saran
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="cine"
-                    href="https://bro.do/contact-us"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Hubungi Kami
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="cine"
-                    href="https://bro.do/testimonial"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Testimonial
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </Col>
@@ -104,22 +105,22 @@ const Footer = () => {
               </div>
               <ul className="footer-menu-list" id="legal">
                 <li>
-                  <a
+                  <Link
                     className="cine"
-                    href="https://bro.do/term-and-condition"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Aturan Penggunaan
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="cine"
-                    href="https://bro.do/privacy-policy"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Kebijakan Privasi
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className="title-brodo-footer-menu text-bold text-left brodo-pull-left brodo-full-100 display-block rel">
@@ -136,22 +137,22 @@ const Footer = () => {
               </div>
               <ul className="footer-menu-list" id="other">
                 <li>
-                  <a
+                  <Link
                     className="cine"
-                    href="https://jurnal.bro.do"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Jurnal
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="cine"
-                    href="https://bro.do/videos"
+                    to={{ javascript: void 0 }}
                     style={{ textDecoration: "none" }}
                   >
                     Halaman Video
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </Col>

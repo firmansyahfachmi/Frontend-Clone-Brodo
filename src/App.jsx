@@ -1,11 +1,12 @@
 import React, {Fragment} from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {Provider} from 'react-redux'
-   
+
 import Header from "./components/layout/header.jsx";
 import Footer from "./components/layout/footer";
 import HomePage from "./components/page/homePage";
 import Collection from "./components/page/collection.jsx";
+import Detail from "./components/page/detail.jsx";
 
 import store from './Publics/Redux/store.js'
 
@@ -38,6 +39,13 @@ const App = () => {
               )
             }}
           />
+        <Route
+        path="/product"
+        exact
+        render={() => {
+          return <Detail />;
+        }}
+      />
         <Footer />
       </Router>
     </Provider>

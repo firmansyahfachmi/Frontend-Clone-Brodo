@@ -103,3 +103,46 @@ ul.footer-menu-list {
   width: 100%;
   font-size: 24px;
 }
+
+.product-price {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+  font-size: 16px;
+  padding-bottom: 20px;
+  color: #f57224;
+  font-weight: 700;
+}
+
+.span-tiny {
+  color: #1a1a1a;
+  -webkit-margin-before: 0 !important;
+  -webkit-margin-after: 0 !important;
+  padding-right: 10px;
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: lighter;
+  background-color: #e4e4e4;
+}
+
+.span-grid {
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid #000;
+  z-index: 0;
+}
+
+.text-bold {
+  margin-bottom: 10px;
+}
+
+.card-body {
+  font-size: 14px;
+}
+
+.zoom-img :hover {
+  transform: scale(
+    1.5
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
