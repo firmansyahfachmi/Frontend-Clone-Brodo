@@ -20,10 +20,10 @@ const App = () => {
         <Route
           path="/"
           exact
-          render={() => {
+          render={(props) => {
             return (
               <Fragment>
-                <Header />
+                <Header history={props.history} key={window.location.search}/>
                 <HomePage />
               </Fragment>
             );
@@ -33,7 +33,7 @@ const App = () => {
             render={(props) => {
               return(
                 <Fragment>
-                  <Header headType="white"/>
+                  <Header headType="white" history={props.history} key={window.location.search}/>
                   <Collection {...props}/>
                 </Fragment>
               )
@@ -44,7 +44,7 @@ const App = () => {
         render={(props) => {
           return (
             <Fragment>
-              <Header headType="white" />
+              <Header headType="white" history={props.history} key={window.location.search}/>
               <Detail {...props}/>
             </Fragment>
           )

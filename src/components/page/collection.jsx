@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Row, Col} from 'react-bootstrap'
 import {connect} from 'react-redux'
 
-import {getProducts} from '../../Publics/Redux/Action/products.js'
+import {getProducts, getProductsSearch} from '../../Publics/Redux/Action/products.js'
 
 import CardLayer from '../card/cardCollection'
 
@@ -13,7 +13,8 @@ class Collection extends Component {
         super();
         this.state = {
             data: [],
-            param: ''
+            param: '',
+            search: ''
         }
     }
 
@@ -23,13 +24,32 @@ class Collection extends Component {
         this.setState({
             param: param
         })
+
+        const urlParams = new URLSearchParams(window.location.search);
+        let search = urlParams.get('search') ;
         
-        await this.props.dispatch(getProducts(param))
-            .then(res => {
-                this.setState({
-                    data: this.props.data
+        if(search !== null){
+            await this.props.dispatch(getProductsSearch(search))
+                .then(res => {
+                    this.setState({
+                        data: this.props.data,
+                        search: search
+                    })
                 })
-            })
+               
+        }else{
+            await this.props.dispatch(getProducts(param))
+                .then(res => {
+                    this.setState({
+                        data: this.props.data
+                    })
+                })
+        }
+            
+    }
+
+    pageMount = () => {
+        
     }
 
     render(){
@@ -40,11 +60,7 @@ class Collection extends Component {
                 <Row style={{fontSize:20, fontWeight:600}} className="border-bottom pb-3">
                     <Col>
                     {
-                        (param === 'all') ? 'SEMUA PRODUK' 
-                        :
-                        (param === 'new product') ? 'NEW PRODUCT'
-                        :
-                        'BEST SELLER'
+                        param.toUpperCase()
                     }
                     </Col>
                 </Row>
