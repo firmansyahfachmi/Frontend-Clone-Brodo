@@ -1,11 +1,12 @@
 import React, {Fragment} from "react";
+import {Link} from 'react-router-dom'
 import { Card, Col, Row, ButtonGroup, Button, Form} from "react-bootstrap";
 
 import './card.css'
 
 
 const cardCollection = (props) => {
-   
+    
     return (
         <Fragment>
             <Row style={{marginTop:30, letterSpacing:0}}>
@@ -49,18 +50,20 @@ const cardCollection = (props) => {
                 {props.products.length > 0 ?
                     props.products.map(products =>(
                 <Col md={4} style={{marginBottom:30}} key={products.id}>
-                    <Card className="cardCollection">
-                        <Card.Img variant="top" src={products.image} alt="Brodo x Rafheoo Backpack Black" />
-                        <Card.Body>
-                            <Card.Title className="pb-1" style={{fontSize:15}}>{products.name}</Card.Title>
-                            <Card.Text className="border-top pt-2" style={{ color:'#e06100', fontWeight:'600', fontSize:18}}>
-                                {
-                                    
-                                }
-                                Rp. <span>{products.price}</span>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
+                            <Link to={`/product/${products.name}`} style={{ textDecoration: 'none' }}>
+                        <Card className="cardCollection">
+                                    <Card.Img variant="top" src={products.image} alt="Brodo x Rafheoo Backpack Black"/>
+                            <Card.Body>
+                                <Card.Title className="pb-1" style={{fontSize:15}}>{products.name}</Card.Title>
+                                <Card.Text className="border-top pt-2" style={{ color:'#e06100', fontWeight:'600', fontSize:18}}>
+                                    {
+                                        
+                                    }
+                                    Rp. <span>{products.price}</span>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                 </Col>
                 ))
                 :

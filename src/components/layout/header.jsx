@@ -29,13 +29,18 @@ const loginClose = () => {
 }
 
 const openSearch = () => {
-     document.getElementById("searched").style.width = "160px";
-     document.getElementById("searched").style.padding = "5px";
+    document.getElementById("searched").style.border = "1px solid silver";
+    document.getElementById("searched").style.width = "160px";
+    document.getElementById("searched").style.padding = "5px";
+    
+
 }
 
 const closeSearch = () => {
-     document.getElementById("searched").style.width = "0px";
-     document.getElementById("searched").style.padding = "0px";
+    document.getElementById("searched").style.width = "0px";
+    document.getElementById("searched").style.padding = "0px";
+    document.getElementById("searched").style.border = "none";
+    
 }
 
 
@@ -68,6 +73,8 @@ const Header = (props) => {
     let color = (props.headType === 'white') ?  '#333333' : 'rgb(255, 255, 255)'
     let image = (props.headType === 'white') ?  'https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-active.png' : 'https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png'
     let border = (props.headType === 'white') ?  'border' : ''
+    
+    
 
     return(
         <div style={{position:'fixed', width:'100%', zIndex : "6"}}>

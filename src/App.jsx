@@ -40,13 +40,12 @@ const App = () => {
             }}
           />
         <Route
-        path="/product"
-        exact
-        render={() => {
+        path="/product/:name"
+        render={(props) => {
           return (
             <Fragment>
               <Header headType="white" />
-              <Detail />
+              <Detail {...props}/>
             </Fragment>
           )
         }}
