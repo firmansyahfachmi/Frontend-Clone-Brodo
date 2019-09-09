@@ -75,7 +75,7 @@ const Header = (props) => {
                 <Navbar.Brand href="/" className="col-lg-2 mr-auto">
                     <img src={image} width="100px" alt="logo"/></Navbar.Brand>
                 <Nav className="mr-auto col-lg-5" style={{ position:'fixed',left:'29%',display: 'flex', justifyContent: 'space-between', fontWeight: 500, letterSpacing:-0.1}} > 
-                    <Nav.Link href="/collection" onMouseOver={hoverClose} className="dropdown" style={{ color:color, marginBottom:-7}}>Koleksi
+                    <Nav.Link href="/collection/all" onMouseOver={hoverClose} className="dropdown" style={{ color:color, marginBottom:-7}}>Koleksi
                         <div className="dropdown-content border">
                             <Nav.Link href="/collection/all" className="collect" style={{color:'black'}}>All</Nav.Link>
                             <Nav.Link href="/collection/new product" className="collect" style={{ color: 'black' }}>Terbaru</Nav.Link>

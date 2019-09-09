@@ -28,13 +28,12 @@ const App = () => {
             );
           }}
         />
-        <Route path="/collection/:name"
-            exact
-            render={() => {
+        <Route path="/collection/:status"
+            render={(props) => {
               return(
                 <Fragment>
                   <Header headType="white"/>
-                  <Collection/>
+                  <Collection {...props}/>
                 </Fragment>
               )
             }}

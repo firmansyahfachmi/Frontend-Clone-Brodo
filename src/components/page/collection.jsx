@@ -12,13 +12,17 @@ class Collection extends Component {
     constructor(){
         super();
         this.state = {
-            data: []
+            data: [],
+            param: ''
         }
     }
 
     componentDidMount = async () => {
         
-        let param = this.props;
+        let param = this.props.match.params.status;
+        this.setState({
+            param: param
+        })
         
         await this.props.dispatch(getProducts(param))
             .then(res => {
@@ -29,12 +33,20 @@ class Collection extends Component {
     }
 
     render(){
-        
+        const {param} = this.state
         return(
             
             <div className="collection">
                 <Row style={{fontSize:20, fontWeight:600}} className="border-bottom pb-3">
-                    <Col>SEMUA PRODUK</Col>
+                    <Col>
+                    {
+                        (param === 'all') ? 'SEMUA PRODUK' 
+                        :
+                        (param === 'new product') ? 'NEW PRODUCT'
+                        :
+                        'BEST SELLER'
+                    }
+                    </Col>
                 </Row>
                 <Row>
                     <Col><CardLayer products={this.state.data}/></Col>
