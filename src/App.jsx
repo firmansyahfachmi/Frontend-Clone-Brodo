@@ -19,38 +19,36 @@ const App = () => {
         <Route
           path="/"
           exact
-          render={() => {
+          render={(props) => {
             return (
               <Fragment>
-                <Header />
+                <Header history={props.history} key={window.location.search}/>
                 <HomePage />
               </Fragment>
             );
           }}
         />
+        <Route path="/collection/:status"
+            render={(props) => {
+              return(
+                <Fragment>
+                  <Header headType="white" history={props.history} key={window.location.search}/>
+                  <Collection {...props}/>
+                </Fragment>
+              )
+            }}
+          />
         <Route
-          path="/collection/:status"
-          render={props => {
-            return (
-              <Fragment>
-                <Header headType="white" />
-                <Collection {...props} />
-              </Fragment>
-            );
-          }}
-        />
-        <Route
-          path="/product"
-          exact
-          render={() => {
-            return (
-              <Fragment>
-                <Header headType="white" />
-                <Detail />
-              </Fragment>
-            );
-          }}
-        />
+        path="/product/:name"
+        render={(props) => {
+          return (
+            <Fragment>
+              <Header headType="white" history={props.history} key={window.location.search}/>
+              <Detail {...props}/>
+            </Fragment>
+          )
+        }}
+      />
         <Footer />
       </Router>
     </Provider>
