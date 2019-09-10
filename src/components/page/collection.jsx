@@ -1,14 +1,15 @@
-import React, {Component} from "react";
-import {Row, Col} from 'react-bootstrap'
-import {connect} from 'react-redux'
+import React, { Component } from "react";
+import { Row, Col } from "react-bootstrap";
+import { connect } from "react-redux";
 
 import {getProducts, getProductsSearch} from '../../Publics/Redux/Action/products.js'
 
-import CardLayer from '../card/cardCollection'
+import CardLayer from "../card/cardCollection";
 
-import './page.css'
+import "./page.css";
 
 class Collection extends Component {
+
     constructor(){
         super();
         this.state = {
@@ -68,10 +69,11 @@ class Collection extends Component {
     }
 }
 
-const mapStateToProps = state =>{
-    return{
-        data:state.products.dataProducts
-    }
-}
 
-export default connect (mapStateToProps) (Collection);
+const mapStateToProps = state => {
+  return {
+    data: state.products.dataProducts
+  };
+};
+
+export default connect(mapStateToProps)(Collection);
