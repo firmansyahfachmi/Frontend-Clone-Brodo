@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import {Link} from 'react-router-dom'
         
 import InfiniteScroll from "react-infinite-scroll-component";
+
 import {
   Card,
   Col,
@@ -114,12 +115,12 @@ class cardCollection extends Component {
             {this.props.products.length > 0 ? (
               this.state.items.map((a, index) => (
                 <Col md={4} style={{ marginBottom: 30 }} key={index}>
-                  <Link to={`/product/${{ ...data[index] }.name} style={{ textDecoration: 'none' }}>
+                  <Link to={`/product/${[...data[index]].name}`} style={{ textDecoration: 'none' }}>
                   <Card className="cardCollection">
                     <Card.Img
                       variant="top"
                       src={{ ...data[index] }.image}
-                      alt="Brodo x Rafheoo Backpack Black"
+                      alt={{ ...data[index] }.name}
                     />
                     <Card.Body>
                       <Card.Title className="pb-1" style={{ fontSize: 15 }}>
