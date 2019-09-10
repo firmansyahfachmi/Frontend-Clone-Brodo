@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
-import {Link} from 'react-router-dom'
-        
+import { Link } from "react-router-dom";
+
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import {
@@ -115,6 +115,7 @@ class cardCollection extends Component {
             {this.props.products.length > 0 ? (
               this.state.items.map((a, index) => (
                 <Col md={4} style={{ marginBottom: 30 }} key={index}>
+
                   <Link to={`/product/${[...data[index]].name}`} style={{ textDecoration: 'none' }}>
                   <Card className="cardCollection">
                     <Card.Img
@@ -140,6 +141,36 @@ class cardCollection extends Component {
                     </Card.Body>
                   </Card>
                  </Link>
+=======
+                  <Link
+                    to={`/product/${{ ...data[index] }.name}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Card className="cardCollection">
+                      <Card.Img
+                        variant="top"
+                        src={{ ...data[index] }.image}
+                        alt="Brodo x Rafheoo Backpack Black"
+                      />
+                      <Card.Body>
+                        <Card.Title className="pb-1" style={{ fontSize: 15 }}>
+                          {{ ...data[index] }.name}
+                        </Card.Title>
+                        <Card.Text
+                          className="border-top pt-2"
+                          style={{
+                            color: "#e06100",
+                            fontWeight: "600",
+                            fontSize: 18
+                          }}
+                        >
+                          {}
+                          Rp. <span>{{ ...data[index] }.price}</span>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+>>>>>>> 66f3f02e55f951c7994355d1c44ad99f8f501d96
                 </Col>
               ))
             ) : (
