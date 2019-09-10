@@ -12,8 +12,10 @@ class Header extends Component{
         this.state = {
             search:''
         }
+        
     }
 
+    
     hover = () => {
         let x = document.getElementById("bodyCategory");
         if (x.style.display === "block") {
@@ -67,7 +69,7 @@ class Header extends Component{
     
     }
 
-    penNav = () => {
+    openNav = () => {
         document.getElementById("Sidepanel").style.width = "300px";
         document.getElementById('over').style.display = 'initial'
     }
@@ -88,7 +90,6 @@ class Header extends Component{
     
     
     render(){
-        
         let backColor = (this.props.headType === 'white') ?  'rgb(255, 255, 255)' : 'rgba(0, 0, 0, 0.8)'
         let color = (this.props.headType === 'white') ?  '#333333' : 'rgb(255, 255, 255)'
         let image = (this.props.headType === 'white') ?  'https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-active.png' : 'https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png'
@@ -103,7 +104,7 @@ class Header extends Component{
                 <Nav className="mr-auto col-lg-5" style={{ position:'fixed',left:'29%',display: 'flex', justifyContent: 'space-between', fontWeight: 500, letterSpacing:-0.1}} > 
                     <Nav.Link href="/collection/all" onMouseOver={this.hoverClose} className="dropdown" style={{ color:color, marginBottom:-7}}>Koleksi
                         <div className="dropdown-content border">
-                            <Nav.Link href="/collection/all" className="collect" style={{color:'black'}}>All</Nav.Link>
+                           <Nav.Link href="/collection/all" className="collect" style={{color:'black'}}>All</Nav.Link>
                             <Nav.Link href="/collection/new product" className="collect" style={{ color: 'black' }}>Terbaru</Nav.Link>
                             <Nav.Link href="/collection/best seller" className="collect" style={{ color: 'black' }}>Best Seller</Nav.Link>
                         </div>
@@ -121,7 +122,7 @@ class Header extends Component{
                         if(e.key === 'Enter'){
             
                             return (
-                                this.props.history.push(`/collection/search?search=${this.state.search} `)
+                                this.props.history.push(`/collection/search?keyword=${this.state.search} `, window.location.href=`/collection/search?keyword=${this.state.search} `)
                             )
                         }
                     }} onChange={this.handleChange}/>

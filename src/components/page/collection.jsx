@@ -26,14 +26,14 @@ class Collection extends Component {
         })
 
         const urlParams = new URLSearchParams(window.location.search);
-        let search = urlParams.get('search') ;
-        
-        if(search !== null){
-            await this.props.dispatch(getProductsSearch(search))
+        let keyword = urlParams.get('keyword') ;
+
+        if(keyword !== null){
+            await this.props.dispatch(getProductsSearch(keyword))
                 .then(res => {
                     this.setState({
                         data: this.props.data,
-                        search: search
+                        search: keyword
                     })
                 })
                
@@ -48,20 +48,16 @@ class Collection extends Component {
             
     }
 
-    pageMount = () => {
-        
-    }
 
     render(){
         const {param} = this.state
+
         return(
             
             <div className="collection">
                 <Row style={{fontSize:20, fontWeight:600}} className="border-bottom pb-3">
                     <Col>
-                    {
-                        param.toUpperCase()
-                    }
+                        {param.toUpperCase()} 
                     </Col>
                 </Row>
                 <Row>
