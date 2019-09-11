@@ -12,18 +12,44 @@ import {
   ToggleButton,
   ButtonToolbar
 } from "react-bootstrap";
+import {
+  addWishlist,
+  deleteWishlist
+} from "../../Publics/Redux/Action/wishlist";
+import { connect } from "react-redux";
 
 class detailBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       wishClass: "fa fa-heart-o",
-      wishData: ""
+      wishStatus: "",
+      wishData: {
+        name: "",
+        price: "",
+        image: "",
+        product_id: ""
+      },
+      id_product: ""
     };
   }
+
+  addWishlist = async () => {
+    setTimeout(() => {
+      this.props.dispatch(addWishlist(this.state.wishData));
+    }, 1000);
+  };
+
+  deleteWishlist = async () => {
+    setTimeout(() => {
+      this.props.dispatch(deleteWishlist(this.state.id_product));
+    }, 1000);
+  };
+
   render() {
     console.log("whislist = ", this.state.wishClass);
-    console.log("whislist data = ", this.state.wishData);
+    console.log("whislist data = ", this.state.wishStatus);
+    console.log("whislist data post = ", this.state.wishData);
     return (
       <Fragment>
         <div className="pt-5" style={{ background: "#e4e4e4" }}>
@@ -57,10 +83,23 @@ class detailBar extends Component {
                             onChange={() => {
                               if (this.state.wishClass === "fa fa-heart") {
                                 this.setState({ wishClass: "fa fa-heart-o" });
-                                this.setState({ wishData: 0 });
+                                this.setState({ wishStatus: 0 });
+                                this.setState({ id_product: detail.id });
+                                this.deleteWishlist();
+                                console.log("unposted");
                               } else {
                                 this.setState({ wishClass: "fa fa-heart" });
-                                this.setState({ wishData: 1 });
+                                this.setState({ wishStatus: 1 });
+                                this.setState({
+                                  wishData: {
+                                    name: detail.name,
+                                    price: detail.price,
+                                    image: detail.image,
+                                    product_id: detail.id
+                                  }
+                                });
+                                this.addWishlist();
+                                console.log("posted");
                               }
                             }}
                           >
@@ -73,6 +112,8 @@ class detailBar extends Component {
                         </ToggleButtonGroup>
                       </ButtonToolbar>
                     </Form.Group>
+                  </Form>
+                  <Form>
                     <Form.Group controlId="exampleForm.ControlSelect1" multiple>
                       <Form.Control
                         as="select"
@@ -165,4 +206,10 @@ class detailBar extends Component {
   }
 }
 
-export default detailBar;
+const mapStateToProps = state => {
+  return {
+    wishData: state.wishlist.addedWishlist
+  };
+};
+
+export default connect(mapStateToProps)(detailBar);

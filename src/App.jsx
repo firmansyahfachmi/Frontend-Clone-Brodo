@@ -6,6 +6,7 @@ import Header from "./components/layout/header.jsx";
 import Footer from "./components/layout/footer";
 import HomePage from "./components/page/homePage";
 import Collection from "./components/page/collection.jsx";
+import Wishlist from "./components/page/wishlist.jsx";
 import Detail from "./components/page/detail.jsx";
 
 import store from "./Publics/Redux/store.js";
@@ -19,36 +20,60 @@ const App = () => {
         <Route
           path="/"
           exact
-          render={(props) => {
+          render={props => {
             return (
               <Fragment>
-                <Header history={props.history} key={window.location.search}/>
+                <Header history={props.history} key={window.location.search} />
                 <HomePage />
               </Fragment>
             );
           }}
         />
-        <Route path="/collection/:status"
-            render={(props) => {
-              return(
-                <Fragment>
-                  <Header headType="white" history={props.history} key={window.location.search}/>
-                  <Collection {...props}/>
-                </Fragment>
-              )
-            }}
-          />
         <Route
-        path="/product/:name"
-        render={(props) => {
-          return (
-            <Fragment>
-              <Header headType="white" history={props.history} key={window.location.search}/>
-              <Detail {...props}/>
-            </Fragment>
-          )
-        }}
-      />
+          path="/collection/:status"
+          render={props => {
+            return (
+              <Fragment>
+                <Header
+                  headType="white"
+                  history={props.history}
+                  key={window.location.search}
+                />
+                <Collection {...props} />
+              </Fragment>
+            );
+          }}
+        />
+        <Route
+          path="/product/:name"
+          render={props => {
+            return (
+              <Fragment>
+                <Header
+                  headType="white"
+                  history={props.history}
+                  key={window.location.search}
+                />
+                <Detail {...props} />
+              </Fragment>
+            );
+          }}
+        />
+        <Route
+          path="/wishlist/:status"
+          render={props => {
+            return (
+              <Fragment>
+                <Header
+                  headType="white"
+                  history={props.history}
+                  key={window.location.search}
+                />
+                <Wishlist {...props} />
+              </Fragment>
+            );
+          }}
+        />
         <Footer />
       </Router>
     </Provider>

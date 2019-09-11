@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Navbar, Form, Nav, Button, FormControl, Row, Col, ButtonGroup} from 'react-bootstrap'
+import {Link} from "react-router-dom"
 
 import {connect} from 'react-redux'
 import { getCart, deleteCart } from '../../Publics/Redux/Action/cart.js'
@@ -106,7 +107,7 @@ class Header extends Component{
 
     removeHandle = (id) => {
 
-        this.props.dispatch(deleteCart(id))
+        // this.props.dispatch(deleteCart(id))
 
 
     }
@@ -156,7 +157,7 @@ class Header extends Component{
 
                     <Button variant="link" style={{ color:color, fontSize : 16 }}><i className="fa fa-search" onClick={this.openSearch}></i></Button>
                     <Button onClick={this.loginShow} onMouseOver={this.hoverClose} variant="link" style={{ color:color, fontSize: 16}}><i className="fa fa-user"></i></Button>
-                    <Button variant="link" style={{ color:color, fontSize: 16 }}><i className="fa fa-heart"></i></Button>
+                    <Link to="/wishlist/my wishlist"><Button variant="link" style={{ color:color, fontSize: 16 }}><i className="fa fa-heart"></i></Button></Link>
                     <Button variant="link" onClick={this.openNav} style={{ color:color, fontSize: 16 }}><i className="fa fa-shopping-cart"></i></Button>
                 </Form>
 
@@ -170,7 +171,7 @@ class Header extends Component{
                         <Col className="border-bottom a">KERANJANG KOSONG</Col>
                         :
                         <Col className="border-bottom">
-                            <div><Cart data={dataCart} handler={this.removeHandle}/></div>
+                            <div><Cart data={dataCart} /></div>
                         </Col>
                         }
                     </Row>
