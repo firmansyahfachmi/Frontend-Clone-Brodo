@@ -17,10 +17,13 @@ class detailBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      whisClass: "fa fa-heart-o"
+      wishClass: "fa fa-heart-o",
+      wishData: ""
     };
   }
   render() {
+    console.log("whislist = ", this.state.wishClass);
+    console.log("whislist data = ", this.state.wishData);
     return (
       <Fragment>
         <div className="pt-5" style={{ background: "#e4e4e4" }}>
@@ -52,18 +55,20 @@ class detailBar extends Component {
                             value={1}
                             style={{ textAlignLast: "right" }}
                             onChange={() => {
-                              if (this.state.whisClass === "fa fa-heart") {
-                                this.setState({ whisClass: "fa fa-heart-o" });
+                              if (this.state.wishClass === "fa fa-heart") {
+                                this.setState({ wishClass: "fa fa-heart-o" });
+                                this.setState({ wishData: 0 });
                               } else {
-                                this.setState({ whisClass: "fa fa-heart" });
+                                this.setState({ wishClass: "fa fa-heart" });
+                                this.setState({ wishData: 1 });
                               }
                             }}
                           >
+                            Add to Wishlist&nbsp;
                             <i
-                              className={this.state.whisClass}
+                              className={this.state.wishClass}
                               style={{ color: "red" }}
                             ></i>
-                            &nbsp;Whislist
                           </ToggleButton>
                         </ToggleButtonGroup>
                       </ButtonToolbar>
@@ -159,5 +164,5 @@ class detailBar extends Component {
     );
   }
 }
-        
+
 export default detailBar;
