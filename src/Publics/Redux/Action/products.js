@@ -1,12 +1,13 @@
 import Axios from "axios";
 
-export const getProducts = category => {
-  let url = "";
-  if (category === "all") {
-    url = `http://192.168.100.150:5000/collection`;
-  } else {
-    url = `http://192.168.100.150:5000/collection/${category}`;
-  }
+export const getProducts = (category) => {
+    let url ='';
+    if(category === 'all'){
+        url = `http://192.168.100.150:5000/collection`
+    }else{
+        url = `http://192.168.100.150:5000/collection/${category}`
+    }
+
 
   return {
     type: "GET_PRODUCTS",
@@ -20,6 +21,7 @@ export const getProductsDetail = name => {
     payload: Axios.get(`http://192.168.100.150:5000/product/${name}`)
   };
 };
+
 
 export const getProductsSearch = name => {
   return {

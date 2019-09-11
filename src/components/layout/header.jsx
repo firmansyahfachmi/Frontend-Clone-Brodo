@@ -1,7 +1,12 @@
 import React, {Component} from 'react'
-import {Navbar, Form, Nav, Button, FormControl, Row, Col} from 'react-bootstrap'
+import {Navbar, Form, Nav, Button, FormControl, Row, Col, ButtonGroup} from 'react-bootstrap'
+
+import {connect} from 'react-redux'
+import { getCart } from '../../Publics/Redux/Action/cart.js'
 
 import './layout.css'
+
+import Cart from "../card/cart";
 
 
 
@@ -10,9 +15,19 @@ class Header extends Component{
     constructor(props){
         super(props)
         this.state = {
-            search:''
+            search:'',
+            dataCart: null
         }
         
+    }
+
+    componentDidMount = async () => {
+        await this.props.dispatch(getCart())
+            .then(res => {
+                this.setState({
+                    dataCart: this.props.cart
+                })
+            })
     }
 
     
@@ -87,9 +102,13 @@ class Header extends Component{
 
     
     }
-    
+
     
     render(){
+        
+        const {dataCart} = this.state
+        console.log("kl", this.props.cart)
+
         let backColor = (this.props.headType === 'white') ?  'rgb(255, 255, 255)' : 'rgba(0, 0, 0, 0.8)'
         let color = (this.props.headType === 'white') ?  '#333333' : 'rgb(255, 255, 255)'
         let image = (this.props.headType === 'white') ?  'https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-active.png' : 'https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png'
@@ -138,8 +157,14 @@ class Header extends Component{
                         <div>KERANJANG</div>    
                         <Nav.Link href="" className="closebtn" onClick={this.closeNav}>x</Nav.Link>
                     </div>
-                    <Row className="a">
-                        <Col className="border-bottom">KERANJANG KOSONG</Col>
+                    <Row className="ml-3 mr-3 mb-2">
+                        {(dataCart === null) ? 
+                        <Col className="border-bottom a">KERANJANG KOSONG</Col>
+                        :
+                        <Col className="border-bottom">
+                            <div><Cart data={dataCart}/></div>
+                        </Col>
+                        }
                     </Row>
                     <Row className="total">
                         
@@ -150,7 +175,16 @@ class Header extends Component{
                                 </Col>
                             </Row>
                             <Row>
+                                {(dataCart === null)?
                                 <Col style={{padding:0}}><Button block>BELANJA SEKARANG BRO</Button></Col>
+                                :
+                                <Col style={{ padding: 0}} className="bg-danger">
+                                    <ButtonGroup style={{ width:'100%'}}>
+                                        <Button variant="secondary">KERANJANG</Button>
+                                        <Button >BAYAR</Button>
+                                    </ButtonGroup>
+                                </Col>
+                                }
                             </Row>
                         </Col>
                         
@@ -242,4 +276,10 @@ class Header extends Component{
     }
 }
 
-export default Header;
+const mapStateToProps = state =>{
+    return {
+        cart:state.cart.addedCart
+    }
+}
+
+export default connect (mapStateToProps) (Header);
