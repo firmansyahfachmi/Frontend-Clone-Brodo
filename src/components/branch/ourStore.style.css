@@ -1,0 +1,39 @@
+.head {
+  padding: 200px 70px 0px 70px;
+  height: auto;
+  text-align: center;
+  color: #1d4458;
+  margin-bottom: 10px;
+}
+
+.page-blocks {
+  flex: 80%;
+  margin: 5% 0 5% 10%;
+  color: #1d4458;
+  display: flex;
+  justify-content: center;
+}
+
+.image-block {
+  flex: 55%;
+}
+
+.detail-block {
+  flex: 45%;
+}
+
+h4 {
+  font-weight: bold;
+}
+span {
+  font-size: 12px;
+}
+
+.map {
+  position: absolute;
+  background-color: #0f3142;
+  padding: 11px 20px;
+  color: aliceblue;
+  /* bottom: -50px; */
+  font-size: 11px;
+}

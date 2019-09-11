@@ -7,6 +7,7 @@ import Footer from "./components/layout/footer";
 import HomePage from "./components/page/homePage";
 import Collection from "./components/page/collection.jsx";
 import Detail from "./components/page/detail.jsx";
+import OurStore from "./components/page/ourStore.page.jsx";
 
 import store from "./Publics/Redux/store.js";
 
@@ -22,33 +23,58 @@ const App = () => {
           render={(props) => {
             return (
               <Fragment>
-                <Header history={props.history} key={window.location.search}/>
+                <Header history={props.history} key={window.location.search} />
                 <HomePage />
               </Fragment>
             );
           }}
         />
-        <Route path="/collection/:status"
-            render={(props) => {
-              return(
-                <Fragment>
-                  <Header headType="white" history={props.history} key={window.location.search}/>
-                  <Collection {...props}/>
-                </Fragment>
-              )
-            }}
-          />
         <Route
-        path="/product/:name"
-        render={(props) => {
-          return (
-            <Fragment>
-              <Header headType="white" history={props.history} key={window.location.search}/>
-              <Detail {...props}/>
-            </Fragment>
-          )
-        }}
-      />
+          path="/collection/:status"
+          render={(props) => {
+            return (
+              <Fragment>
+                <Header
+                  headType="white"
+                  history={props.history}
+                  key={window.location.search}
+                />
+                <Collection {...props} />
+              </Fragment>
+            );
+          }}
+        />
+        <Route
+          path="/product/:name"
+          render={(props) => {
+            return (
+              <Fragment>
+                <Header
+                  headType="white"
+                  history={props.history}
+                  key={window.location.search}
+                />
+                <Detail {...props} />
+              </Fragment>
+            );
+          }}
+        />
+
+        <Route
+          path="/pages/our-store"
+          render={(props) => {
+            return (
+              <Fragment>
+                <Header
+                  headType="white"
+                  history={props.history}
+                  key={window.location.search}
+                />
+                <OurStore {...props} />
+              </Fragment>
+            );
+          }}
+        />
         <Footer />
       </Router>
     </Provider>
