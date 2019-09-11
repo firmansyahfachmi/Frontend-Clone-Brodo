@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./ourStore.style.css";
 
 const CardStore = (props) => {
@@ -8,7 +9,9 @@ const CardStore = (props) => {
       {console.log("print data", props.data)}
       <Container>
         <div className="head">
-          <span>Halaman Utama</span>
+          <Link to="/" style={{ textDecoration: "none", color: "#1d4458" }}>
+            <span>Halaman Utama</span>
+          </Link>
           <h1>Toko Kami</h1>
           <br />
           <span>Kunjungi toko kami yang tersebar di kota-kota berikut</span>
