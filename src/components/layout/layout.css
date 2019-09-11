@@ -94,7 +94,7 @@
   transition: 0.3s;
   font-weight: 500;
   width: 100%;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
 }
 

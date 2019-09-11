@@ -2,11 +2,12 @@ import React, {Component} from 'react'
 import {Navbar, Form, Nav, Button, FormControl, Row, Col, ButtonGroup} from 'react-bootstrap'
 
 import {connect} from 'react-redux'
-import { getCart } from '../../Publics/Redux/Action/cart.js'
+import { getCart, deleteCart } from '../../Publics/Redux/Action/cart.js'
 
 import './layout.css'
 
 import Cart from "../card/cart";
+
 
 
 
@@ -103,6 +104,13 @@ class Header extends Component{
     
     }
 
+    removeHandle = (id) => {
+
+        this.props.dispatch(deleteCart(id))
+
+
+    }
+
     
     render(){
         
@@ -162,7 +170,7 @@ class Header extends Component{
                         <Col className="border-bottom a">KERANJANG KOSONG</Col>
                         :
                         <Col className="border-bottom">
-                            <div><Cart data={dataCart}/></div>
+                            <div><Cart data={dataCart} handler={this.removeHandle}/></div>
                         </Col>
                         }
                     </Row>
