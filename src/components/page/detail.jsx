@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from "react";
 import {connect} from 'react-redux'
 
-import { getProductsDetail } from '../../Publics/Redux/Action/products.js'
+import { getProductsDetail} from '../../Publics/Redux/Action/products.js'
 
 import Detail from "../detail/Detail";
 

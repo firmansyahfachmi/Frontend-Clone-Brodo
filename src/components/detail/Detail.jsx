@@ -13,6 +13,9 @@ import {
   ButtonToolbar
 } from "react-bootstrap";
 
+import { postCart } from '../../Publics/Redux/Action/cart.js'
+import { connect } from 'react-redux'
+
 class detailBar extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +23,12 @@ class detailBar extends Component {
       whisClass: "fa fa-heart-o"
     };
   }
+
+  addCart = (data) => {
+    this.props.dispatch(postCart(data))
+  }
+  
+
   render() {
     return (
       <Fragment>
@@ -91,6 +100,8 @@ class detailBar extends Component {
                           border: "#0b3f57",
                           width: "100%"
                         }}
+
+                        onClick = {this.addCart(detail)}
                       >
                         TAMBAH KE KERANJANG
                       </Button>
@@ -160,5 +171,11 @@ class detailBar extends Component {
     );
   }
 }
-        
-export default detailBar;
+       
+const mapStateToProps = state => {
+  return{
+    cart:state.cart.addedData
+  }
+}
+
+export default connect (mapStateToProps) (detailBar);

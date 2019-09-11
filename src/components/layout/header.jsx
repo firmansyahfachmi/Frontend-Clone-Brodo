@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Navbar, Form, Nav, Button, FormControl, Row, Col, ButtonGroup} from 'react-bootstrap'
 
 import {connect} from 'react-redux'
-import { getCart, deleteCart } from '../../Publics/Redux/Action/cart.js'
+import { getCart} from '../../Publics/Redux/Action/cart.js'
 
 import './layout.css'
 
@@ -101,21 +101,13 @@ class Header extends Component{
             search: e.target.value 
         })
 
-    
     }
 
-    removeHandle = (id) => {
-
-        this.props.dispatch(deleteCart(id))
-
-
-    }
 
     
     render(){
         
         const {dataCart} = this.state
-        console.log("kl", this.props.cart)
 
         let backColor = (this.props.headType === 'white') ?  'rgb(255, 255, 255)' : 'rgba(0, 0, 0, 0.8)'
         let color = (this.props.headType === 'white') ?  '#333333' : 'rgb(255, 255, 255)'
@@ -170,7 +162,7 @@ class Header extends Component{
                         <Col className="border-bottom a">KERANJANG KOSONG</Col>
                         :
                         <Col className="border-bottom">
-                            <div><Cart data={dataCart} handler={this.removeHandle}/></div>
+                            <div><Cart data={dataCart}/></div>
                         </Col>
                         }
                     </Row>
@@ -199,7 +191,7 @@ class Header extends Component{
                     </Row>
                     
                 </div>
-                <div id="over" className="overlay"></div>
+                <div id="over" onClick={this.closeNav} className="overlay"></div>
                 <div id="over2" className="overlay2"></div>
             </Navbar>
 
