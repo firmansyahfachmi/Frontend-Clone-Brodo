@@ -75,6 +75,21 @@ const App = () => {
             );
           }}
         />
+        <Route
+          path="/pages/our-store"
+          render={(props) => {
+            return (
+              <Fragment>
+                <Header
+                  headType="white"
+                  history={props.history}
+                  key={window.location.search}
+                />
+                <OurStore {...props} />
+              </Fragment>
+            );
+          }}
+        />
         <Footer />
       </Router>
     </Provider>
