@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const cart = (state = initialState, action) => {
-
+    
     switch (action.type) {
 
         case 'GET_CART_PENDING':
@@ -68,11 +68,10 @@ const cart = (state = initialState, action) => {
                 isFulfilled: false
             };
         case 'DELETE_CART_FULFILLED':
-            let filter = state.addedCart.findIndex(cart => {
-                return cart.id === action.payload.data.response.id
-
-            })
+            let filter = state.addedCart.findIndex(cart => cart.id === action.payload.data.response.id)
             let deleted = state.addedCart.splice(filter, 1);
+
+            console.log("as", filter)
             return {
                 ...state,
                 isloading: false,

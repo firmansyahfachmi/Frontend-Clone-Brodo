@@ -35,6 +35,7 @@ class detailBar extends Component {
         <div className="pt-5" style={{ background: "#e4e4e4" }}>
           <Container className="mt-4">
             {this.props.detailProducts.map(detail => (
+             
               <Row>
                 <Col className="p-4" md={5}>
                   <div>
@@ -101,7 +102,7 @@ class detailBar extends Component {
                           width: "100%"
                         }}
 
-                        onClick = {this.addCart(detail)}
+                        onClick = {() =>this.addCart(detail)}
                       >
                         TAMBAH KE KERANJANG
                       </Button>
@@ -174,7 +175,7 @@ class detailBar extends Component {
        
 const mapStateToProps = state => {
   return{
-    cart:state.cart.addedData
+    cart:state.cart.addedCart
   }
 }
 
