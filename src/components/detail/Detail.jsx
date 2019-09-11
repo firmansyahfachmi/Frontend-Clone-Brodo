@@ -10,6 +10,10 @@ import {
   Card
 } from "react-bootstrap";
 
+const addToCart = data => {
+  // this.props.dispatch()
+}
+
 const detailBar = (props) => {
   console.log("data",props.detailProducts)
   return (
@@ -54,6 +58,8 @@ const detailBar = (props) => {
                       border: "#0b3f57",
                       width: "100%"
                     }}
+
+                    onClick={addToCart(detail)}
                   >
                     TAMBAH KE KERANJANG
                   </Button>

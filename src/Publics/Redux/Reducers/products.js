@@ -55,19 +55,19 @@ const products = (state = initialState, action) => {
                 dataProductsDetail: action.payload.data.response
             };
         case 'GET_SEARCH_PRODUCTS_PENDING':
-        return {
-            ...state,
-            isloading: true,
-            isRejected: false,
-            isFulfilled: false
-        };
+            return {
+                ...state,
+                isloading: true,
+                isRejected: false,
+                isFulfilled: false
+            };
         case 'GET_SEARCH_PRODUCTS_REJECTED':
-        return {
-            ...state,
-            isloading: false,
-            isRejected: true,
-            isFulfilled: false
-        };
+            return {
+                ...state,
+                isloading: false,
+                isRejected: true,
+                isFulfilled: false
+            };
         case 'GET_SEARCH_PRODUCTS_FULFILLED':
 
         return {
@@ -76,6 +76,7 @@ const products = (state = initialState, action) => {
             isFulfilled: true,
             dataProducts: action.payload.data.response
         };
+
         default: 
             return state;
     }   

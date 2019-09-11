@@ -18,8 +18,7 @@ class cardCollection extends Component {
     super(props);
     this.state = {
       items: Array.from({ length: 6 }),
-      hasMore: true,
-      length: props.products
+      hasMore: true
     };
   }
 
@@ -149,6 +148,7 @@ class cardCollection extends Component {
                       </Card.Body>
                     </Card>
                   </Link>
+
                 </Col>
               ))
             ) : (
