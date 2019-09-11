@@ -3,12 +3,9 @@ import {Row, Col, Button} from 'react-bootstrap'
 
 import { deleteCart } from '../../Publics/Redux/Action/cart.js'
 
-const remove = (id) => {
-    this.props.dispatch(deleteCart(id))
-}
-
 
 const Cart = (props) => {
+        
     return(
         <Fragment>
             {props.data.map(cart =>(
@@ -28,7 +25,7 @@ const Cart = (props) => {
                     </Row>
                 </Col>
                 <Col md={1}>
-                    <Button className="p-0" variant="link" style={{textDecoration:'none', color:'grey'}} onClick={remove(cart.id)}><i className="fa fa-minus"></i></Button>
+                        <Button className="p-0" variant="link" style={{ textDecoration: 'none', color: 'grey' }} onClick={() => props.dispatch(deleteCart(cart.id))}><i className="fa fa-minus"></i></Button>
                 </Col>
             </Row>
             ))}
