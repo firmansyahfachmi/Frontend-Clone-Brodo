@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from "react";
+import Swal from "sweetalert2";
 import {
   Container,
   Row,
@@ -25,11 +26,30 @@ class detailBar extends Component {
   }
 
   addCart = (data) => {
-    this.props.postCart(data)
+    
+    this.props.postCart(data)     
+
+    // const Toast = Swal.mixin({
+    //   toast: true,
+    //   position: 'right',
+    //   showConfirmButton: false,
+    //   timer: 3000
+    // })
+
+    Swal.fire({
+      type: 'success',
+      title: 'Barang di tamabahkan ke keranjang',
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    
   }
   
 
   render() {
+    
     return (
       <Fragment>
         <div className="pt-5" style={{ background: "#e4e4e4" }}>
@@ -92,6 +112,7 @@ class detailBar extends Component {
                         <option>3</option>
                         <option>4</option>
                         <option>5</option>
+                        
                       </Form.Control>
                     </Form.Group>
                     <Form.Group>
@@ -102,7 +123,11 @@ class detailBar extends Component {
                           width: "100%"
                         }}
 
-                        onClick = {() =>this.addCart(detail)}
+                        onClick = {() =>
+                          {
+                          this.addCart(detail)
+                          }
+                        }
                       >
                         TAMBAH KE KERANJANG
                       </Button>
