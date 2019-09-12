@@ -44,13 +44,13 @@ class detailBar extends Component {
 
   addWishlist = async () => {
     setTimeout(() => {
-      this.props.dispatch(addWishlist(this.state.wishData));
+      this.props.addWishlist(this.state.wishData);
     }, 1000);
   };
 
   deleteWishlist = async () => {
     setTimeout(() => {
-      this.props.dispatch(deleteWishlist(this.state.id_product));
+      this.props.deleteWishlist(this.state.id_product);
     }, 1000);
   };
 
@@ -68,6 +68,7 @@ class detailBar extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <Fragment>
         <div className="pt-5" style={{ background: "#e4e4e4" }}>
@@ -238,6 +239,12 @@ const mapDispatchToProps = dispatch => {
   return {
     postCart: data => {
       dispatch(postCart(data));
+    },
+    addWishlist: data => {
+      dispatch(addWishlist(data));
+    },
+    deleteWishlist: data => {
+      dispatch(deleteWishlist(data));
     }
   };
 };
