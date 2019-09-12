@@ -16,19 +16,14 @@ class Header extends Component{
     constructor(props){
         super(props)
         this.state = {
-            search:'',
-            dataCart: []
+            search:''
         }
         
     }
 
     componentDidMount = async () => {
         await this.props.dispatch(getCart())
-            .then(res => {
-                this.setState({
-                    dataCart: this.props.cart
-                })
-            })
+            
     }
 
     
@@ -107,7 +102,7 @@ class Header extends Component{
     
     render(){
         
-        const {dataCart} = this.state
+        // const {dataCart} = this.state
 
         let backColor = (this.props.headType === 'white') ?  'rgb(255, 255, 255)' : 'rgba(0, 0, 0, 0.8)'
         let color = (this.props.headType === 'white') ?  '#333333' : 'rgb(255, 255, 255)'
@@ -158,11 +153,11 @@ class Header extends Component{
                         <Nav.Link href="" className="closebtn" onClick={this.closeNav}>x</Nav.Link>
                     </div>
                     <Row className="ml-3 mr-3 mb-2">
-                        {(dataCart.length === 0) ? 
+                        {(this.props.cart.length === 0) ? 
                         <Col className="border-bottom a">KERANJANG KOSONG</Col>
                         :
                         <Col>
-                            <div><Cart data={this.props.cart}/></div>
+                            <div><Cart data={this.props.cart} /></div>
                         </Col>
                         }
                     </Row>
@@ -171,11 +166,11 @@ class Header extends Component{
                         <Col>
                             <Row style={{marginBottom:10}}>
                                 <Col style={{ border: '1px solid black', padding: 6 }}>Total
-                                    <span style={{ float:'right'}}>Rp</span>
+                                    <span style={{ float:'right'}}>Rp. {this.props.total} </span>
                                 </Col>
                             </Row>
                             <Row>
-                                {(dataCart.length === 0)?
+                                {(this.props.cart.length === 0)?
                                     <Col style={{ padding: 0 }}><a href='/collection/all' style={{textDecoration:'none'}}><Button block>BELANJA SEKARANG BRO</Button></a></Col>
                                 :
                                 <Col style={{ padding: 0}} className="bg-danger">
@@ -278,7 +273,8 @@ class Header extends Component{
 
 const mapStateToProps = state =>{
     return {
-        cart:state.cart.addedCart
+        cart:state.cart.addedCart,
+        total:state.cart.total
     }
 }
 

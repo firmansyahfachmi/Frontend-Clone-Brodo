@@ -1,5 +1,6 @@
 const initialState = {
     addedCart: [],
+    total: 0,
     isLoading: false,
     isFulfilled: false,
     isRejected: false
@@ -46,13 +47,28 @@ const cart = (state = initialState, action) => {
                     isFulfilled: false
             };
         case 'POST_CART_FULFILLED':
-            state.addedCart.push(action.payload.data.response)
-            return {
-                ...state,
-                isloading: false,
-                isFulfilled: true,
-                addedCart: [...state.addedCart]
-            };
+
+            let existed_item = state.addedCart.find(cart => Number(action.payload.data.response.id) === Number(cart.id))
+            
+            if(existed_item){
+                
+                return {
+                    ...state,
+                    total: state.total + action.payload.data.response.price
+                }
+            }else{
+
+                let newTotal = state.total + action.payload.data.response.price
+
+                state.addedCart.push(action.payload.data.response)
+                return {
+                    ...state,
+                    isloading: false,
+                    isFulfilled: true,
+                    addedCart: [...state.addedCart],
+                    total: newTotal
+                };
+            }
         case 'DELETE_CART_PENDING':
             return {
                 ...state,
@@ -68,16 +84,25 @@ const cart = (state = initialState, action) => {
                 isFulfilled: false
             };
         case 'DELETE_CART_FULFILLED':
+            let find = state.addedCart.filter(cart => {
+                return Number(cart.id) === Number(action.payload.data.response)
+            })
+
+            let min = Number(state.total) - Number(find[0].price)
+            
             let new_items= state.addedCart.filter(cart => {
                 return Number(cart.id) !== Number(action.payload.data.response)
 
             })
+              
 
             return {
                 ...state,
                 isloading: false,
                 isFulfilled: true,
-                addedCart:new_items
+                addedCart:new_items,
+                total: min
+
             };
 
         default:
