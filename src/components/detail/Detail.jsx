@@ -59,11 +59,12 @@ class detailBar extends Component {
                               }
                             }}
                           >
+                            
+                           Add to Wishlist &nbsp;
                             <i
                               className={this.state.whisClass}
                               style={{ color: "red" }}
                             ></i>
-                            &nbsp;Whislist
                           </ToggleButton>
                         </ToggleButtonGroup>
                       </ButtonToolbar>
@@ -117,7 +118,7 @@ class detailBar extends Component {
                     </span>
                   </div>
                   <Form>
-                    <Form.Group controlId="exampleForm.ControlSelect1" multiple>
+                    <Form.Group controlId="exampleForm.ControlSelect2" multiple>
                       <Form.Control
                         as="select"
                         type="text"
