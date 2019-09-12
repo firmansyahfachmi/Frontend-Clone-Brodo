@@ -69,8 +69,8 @@ export class Checkout extends Component {
                 className="form-control mb-3 mt-3"
                 placeholder="Atasnama"
               />
-              <div style={{ border: "solid grey 2px" }}>
-                <p>Alamat Tidak Tersedia</p>
+              <div style={{ border: "solid grey 2px", padding: "10px" }}>
+                <p style={{ color: "red" }}>Alamat Tidak Tersedia</p>
                 <hr />
                 <p>Tambahkan Alamat Baru Bro-Sis</p>
               </div>

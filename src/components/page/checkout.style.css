@@ -18,6 +18,7 @@ td {
   width: 98%;
   /* margin: auto; */
   max-height: 500px;
+  flex-wrap: wrap;
 }
 
 .divHead {
@@ -50,7 +51,8 @@ div.scroll {
   text-align: justify;
 }
 .bodyDiv {
-  flex: 1;
+  flex: 1 0 423px;
+  max-width: 422px;
   flex-direction: column;
   /* padding: 10px; */
   /* margin: auto; */
