@@ -1,5 +1,5 @@
-import React, {Fragment} from 'react'
-import {Row, Col, Button} from 'react-bootstrap'
+import React, { Fragment } from "react";
+import { Row, Col, Button } from "react-bootstrap";
 
 import { connect } from 'react-redux'
 import { deleteCart } from '../../Publics/Redux/Action/cart.js'
@@ -27,12 +27,29 @@ const Cart = (props) => {
                 <Col md={1}>
                         <Button className="p-0" variant="link" style={{ textDecoration: 'none', color: 'grey' }} onClick={() => props.dispatch(deleteCart(cart.id))}><i className="fa fa-minus"></i></Button>
                 </Col>
-            </Row>
-            ))}
-            </div>
-        </Fragment>
-    )
-}
+              </Row>
+              <Row>
+                <Col style={{ fontSize: 14 }}>Rp. {cart.price}</Col>
+              </Row>
+              <Row>
+                <Col style={{ fontSize: 14 }}>Jumlah : 3</Col>
+              </Row>
+            </Col>
+            <Col md={1}>
+              <Button
+                className="p-0"
+                variant="link"
+                style={{ textDecoration: "none", color: "grey" }}
+              >
+                <i className="fa fa-minus"></i>
+              </Button>
+            </Col>
+          </Row>
+        ))}
+      </div>
+    </Fragment>
+  );
+};
 
 const mapStateToProps = state =>{
     return{

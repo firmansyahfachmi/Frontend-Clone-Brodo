@@ -13,6 +13,11 @@ import {
   ToggleButton,
   ButtonToolbar
 } from "react-bootstrap";
+import {
+  addWishlist,
+  deleteWishlist
+} from "../../Publics/Redux/Action/wishlist";
+import { connect } from "react-redux";
 
 import { postCart } from '../../Publics/Redux/Action/cart.js'
 import { connect } from 'react-redux'
@@ -21,20 +26,36 @@ class detailBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      whisClass: "fa fa-heart-o"
+      wishClass: "fa fa-heart-o",
+      wishClass1: "fa fa-heart",
+      wishStatus: 0, //status sudah wishlist atau belum
+      wishId: 0, //active button or nah
+      wishData: {
+        name: "",
+        price: "",
+        image: "",
+        product_id: ""
+      },
+      wishlist: [],
+      id_product: ""
     };
   }
+
+  addWishlist = async () => {
+    setTimeout(() => {
+      this.props.dispatch(addWishlist(this.state.wishData));
+    }, 1000);
+  };
+
+  deleteWishlist = async () => {
+    setTimeout(() => {
+      this.props.dispatch(deleteWishlist(this.state.id_product));
+    }, 1000);
+  };
 
   addCart = (data) => {
     
     this.props.postCart(data)     
-
-    // const Toast = Swal.mixin({
-    //   toast: true,
-    //   position: 'right',
-    //   showConfirmButton: false,
-    //   timer: 3000
-    // })
 
     Swal.fire({
       type: 'success',
@@ -49,7 +70,6 @@ class detailBar extends Component {
   
 
   render() {
-    
     return (
       <Fragment>
         <div className="pt-5" style={{ background: "#e4e4e4" }}>
@@ -75,30 +95,53 @@ class detailBar extends Component {
                       <ButtonToolbar
                         style={{ float: "right", marginBottom: "20px" }}
                       >
-                        <ToggleButtonGroup type="checkbox">
+                        <ToggleButtonGroup
+                          type="checkbox"
+                          defaultValue={this.state.wishId}
+                        >
                           <ToggleButton
                             variant="light"
                             size="lg"
                             value={1}
                             style={{ textAlignLast: "right" }}
                             onChange={() => {
-                              if (this.state.whisClass === "fa fa-heart") {
-                                this.setState({ whisClass: "fa fa-heart-o" });
+                              if (this.state.wishStatus === 0) {
+                                this.setState({ wishClass: "fa fa-heart" });
+                                this.setState({ wishStatus: 1 });
+                                this.setState({
+                                  wishData: {
+                                    name: detail.name,
+                                    price: detail.price,
+                                    image: detail.image,
+                                    product_id: detail.id
+                                  }
+                                });
+                                this.addWishlist();
+                                console.log("posted");
                               } else {
-                                this.setState({ whisClass: "fa fa-heart" });
+                                this.setState({ wishClass: "fa fa-heart-o" });
+                                this.setState({ wishStatus: 0 });
+                                this.setState({ id_product: detail.id });
+                                this.deleteWishlist();
+                                console.log("unposted");
                               }
                             }}
                           >
-                            
-                           Add to Wishlist &nbsp;
+                            Add to Wishlist &nbsp;
                             <i
-                              className={this.state.whisClass}
+                              className={
+                                this.state.wishStatus === 1
+                                  ? this.state.wishClass1
+                                  : this.state.wishClass
+                              }
                               style={{ color: "red" }}
                             ></i>
                           </ToggleButton>
                         </ToggleButtonGroup>
                       </ButtonToolbar>
                     </Form.Group>
+                  </Form>
+                  <Form>
                     <Form.Group controlId="exampleForm.ControlSelect1" multiple>
                       <Form.Control
                         as="select"
@@ -206,7 +249,8 @@ const mapDispatchToProps = (dispatch) => {
        
 const mapStateToProps = state => {
   return{
-    cart:state.cart.addedCart
+    cart:state.cart.addedCart,
+    wishlist: state.wishlist.addedWishlist
   }
 }
 

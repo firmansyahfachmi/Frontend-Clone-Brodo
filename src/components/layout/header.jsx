@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Navbar, Form, Nav, Button, FormControl, Row, Col, ButtonGroup} from 'react-bootstrap'
+import {Link} from "react-router-dom"
 
 import {connect} from 'react-redux'
 import { getCart} from '../../Publics/Redux/Action/cart.js'
@@ -96,10 +97,7 @@ class Header extends Component{
             search: e.target.value 
         })
 
-    }
-
-
-    
+    }  
     render(){
         
         // const {dataCart} = this.state
@@ -143,7 +141,7 @@ class Header extends Component{
 
                     <Button variant="link" style={{ color:color, fontSize : 16 }}><i className="fa fa-search" onClick={this.openSearch}></i></Button>
                     <Button onClick={this.loginShow} onMouseOver={this.hoverClose} variant="link" style={{ color:color, fontSize: 16}}><i className="fa fa-user"></i></Button>
-                    <Button variant="link" style={{ color:color, fontSize: 16 }}><i className="fa fa-heart"></i></Button>
+                    <Link to="/wishlist/my wishlist"><Button variant="link" style={{ color:color, fontSize: 16 }}><i className="fa fa-heart"></i></Button></Link>
                     <Button variant="link" onClick={this.openNav} style={{ color:color, fontSize: 16 }}><i className="fa fa-shopping-cart"></i></Button>
                 </Form>
 
