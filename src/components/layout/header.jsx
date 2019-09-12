@@ -174,7 +174,7 @@ class Header extends Component{
                                 <Col style={{ padding: 0}} className="bg-danger">
                                     <ButtonGroup style={{ width:'100%'}}>
                                         <Button variant="secondary">KERANJANG</Button>
-                                        <Button >BAYAR</Button>
+                                        <Button > <Nav.Link href="/checkout" style={{color:"white"}}>BAYAR</Nav.Link></Button>
                                     </ButtonGroup>
                                 </Col>
                                 }
