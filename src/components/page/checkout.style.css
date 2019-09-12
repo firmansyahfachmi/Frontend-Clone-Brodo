@@ -111,3 +111,7 @@ td {
   border-color: aliceblue;
   border-width: 5px;
 }
+
+.tborder {
+  border-top: solid 2px grey;
+}

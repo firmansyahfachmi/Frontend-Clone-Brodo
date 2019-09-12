@@ -42,11 +42,12 @@ export class Checkout extends Component {
 
   render() {
     const data = this.state.dataCart;
-
+    // const sum = this.state.data.price.reduce((a, b) => a + (b || 0), 0);
+    const total = data.reduce((prev, next) => prev + next.price, 0);
     return (
       <Fragment>
         <p>asd</p>
-        {console.log(data)}
+        {console.log(total)}
         <p style={{ marginTop: "60px" }}></p>
         <div className="pContainer">
           <div className="bodyDiv">
@@ -215,7 +216,7 @@ export class Checkout extends Component {
                         <Col style={{ fontSize: 14 }}>Rp. {data.price}</Col>
                       </Row>
                       <Row>
-                        <Col style={{ fontSize: 14 }}>Jumlah : 3</Col>
+                        <Col style={{ fontSize: 14 }}>Jumlah : 1</Col>
                       </Row>
                     </Col>
                   </Row>
@@ -224,18 +225,29 @@ export class Checkout extends Component {
 
               {/* ------------------------Get Cart--------------------------------------------------------------- */}
 
-              <table style={{ width: "90%", margin: "auto" }}>
+              <table
+                style={{
+                  width: "90%",
+                  margin: "auto"
+                }}
+              >
                 <tr>
-                  <td style={{ padding: "10px" }}>Total Belanja</td>
+                  <td style={{ padding: "10px" }}>
+                    Total Belanja = Rp.{total}
+                  </td>
                 </tr>
                 <tr>
-                  <td style={{ padding: "10px" }}>Total Diskon</td>
+                  <td style={{ padding: "10px", color: "red" }}>
+                    Total Diskon
+                  </td>
                 </tr>
-                <tr>
+                <tr style={{ borderTopStyle: "hidden" }}>
                   <td style={{ padding: "10px" }}>Ongkos Kirim</td>
                 </tr>
                 <tr>
-                  <td style={{ padding: "10px" }}>Total Dibayar</td>
+                  <td style={{ padding: "10px" }}>
+                    <b>Total Dibayar</b>
+                  </td>
                 </tr>
               </table>
             </div>
