@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from "react";
+import Swal from "sweetalert2";
 import {
   Container,
   Row,
@@ -13,6 +14,9 @@ import {
   ButtonToolbar
 } from "react-bootstrap";
 
+import { postCart } from '../../Publics/Redux/Action/cart.js'
+import { connect } from 'react-redux'
+
 class detailBar extends Component {
   constructor(props) {
     super(props);
@@ -20,12 +24,38 @@ class detailBar extends Component {
       whisClass: "fa fa-heart-o"
     };
   }
+
+  addCart = (data) => {
+    
+    this.props.postCart(data)     
+
+    // const Toast = Swal.mixin({
+    //   toast: true,
+    //   position: 'right',
+    //   showConfirmButton: false,
+    //   timer: 3000
+    // })
+
+    Swal.fire({
+      type: 'success',
+      title: 'Barang di tamabahkan ke keranjang',
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    
+  }
+  
+
   render() {
+    
     return (
       <Fragment>
         <div className="pt-5" style={{ background: "#e4e4e4" }}>
           <Container className="mt-4">
             {this.props.detailProducts.map(detail => (
+             
               <Row>
                 <Col className="p-4" md={5}>
                   <div>
@@ -82,6 +112,7 @@ class detailBar extends Component {
                         <option>3</option>
                         <option>4</option>
                         <option>5</option>
+                        
                       </Form.Control>
                     </Form.Group>
                     <Form.Group>
@@ -91,6 +122,12 @@ class detailBar extends Component {
                           border: "#0b3f57",
                           width: "100%"
                         }}
+
+                        onClick = {() =>
+                          {
+                          this.addCart(detail)
+                          }
+                        }
                       >
                         TAMBAH KE KERANJANG
                       </Button>
@@ -160,5 +197,17 @@ class detailBar extends Component {
     );
   }
 }
-        
-export default detailBar;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    postCart: (data) => { dispatch(postCart(data)) }
+  }
+}
+       
+const mapStateToProps = state => {
+  return{
+    cart:state.cart.addedCart
+  }
+}
+
+export default connect (mapStateToProps, mapDispatchToProps) (detailBar);
