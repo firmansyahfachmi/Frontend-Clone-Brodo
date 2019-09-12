@@ -162,7 +162,7 @@ class Header extends Component{
                         <Col className="border-bottom a">KERANJANG KOSONG</Col>
                         :
                         <Col>
-                            <div><Cart data={dataCart}/></div>
+                            <div><Cart data={this.props.cart}/></div>
                         </Col>
                         }
                     </Row>

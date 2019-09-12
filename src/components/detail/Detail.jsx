@@ -25,7 +25,7 @@ class detailBar extends Component {
   }
 
   addCart = (data) => {
-    this.props.dispatch(postCart(data))
+    this.props.postCart(data)
   }
   
 
@@ -172,6 +172,12 @@ class detailBar extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    postCart: (data) => { dispatch(postCart(data)) }
+  }
+}
        
 const mapStateToProps = state => {
   return{
@@ -179,4 +185,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect (mapStateToProps) (detailBar);
+export default connect (mapStateToProps, mapDispatchToProps) (detailBar);
