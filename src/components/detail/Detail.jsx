@@ -23,13 +23,16 @@ class detailBar extends Component {
     super(props);
     this.state = {
       wishClass: "fa fa-heart-o",
-      wishStatus: "",
+      wishClass1: "fa fa-heart",
+      wishStatus: 0, //status sudah wishlist atau belum
+      wishId: 0, //active button or nah
       wishData: {
         name: "",
         price: "",
         image: "",
         product_id: ""
       },
+      wishlist: [],
       id_product: ""
     };
   }
@@ -50,6 +53,7 @@ class detailBar extends Component {
     console.log("whislist = ", this.state.wishClass);
     console.log("whislist data = ", this.state.wishStatus);
     console.log("whislist data post = ", this.state.wishData);
+    console.log("whislist masuk = ", this.props.wishlist);
     return (
       <Fragment>
         <div className="pt-5" style={{ background: "#e4e4e4" }}>
@@ -74,20 +78,17 @@ class detailBar extends Component {
                       <ButtonToolbar
                         style={{ float: "right", marginBottom: "20px" }}
                       >
-                        <ToggleButtonGroup type="checkbox">
+                        <ToggleButtonGroup
+                          type="checkbox"
+                          defaultValue={this.state.wishId}
+                        >
                           <ToggleButton
                             variant="light"
                             size="lg"
                             value={1}
                             style={{ textAlignLast: "right" }}
                             onChange={() => {
-                              if (this.state.wishClass === "fa fa-heart") {
-                                this.setState({ wishClass: "fa fa-heart-o" });
-                                this.setState({ wishStatus: 0 });
-                                this.setState({ id_product: detail.id });
-                                this.deleteWishlist();
-                                console.log("unposted");
-                              } else {
+                              if (this.state.wishStatus === 0) {
                                 this.setState({ wishClass: "fa fa-heart" });
                                 this.setState({ wishStatus: 1 });
                                 this.setState({
@@ -100,12 +101,22 @@ class detailBar extends Component {
                                 });
                                 this.addWishlist();
                                 console.log("posted");
+                              } else {
+                                this.setState({ wishClass: "fa fa-heart-o" });
+                                this.setState({ wishStatus: 0 });
+                                this.setState({ id_product: detail.id });
+                                this.deleteWishlist();
+                                console.log("unposted");
                               }
                             }}
                           >
                             Add to Wishlist &nbsp;
                             <i
-                              className={this.state.wishClass}
+                              className={
+                                this.state.wishStatus === 1
+                                  ? this.state.wishClass1
+                                  : this.state.wishClass
+                              }
                               style={{ color: "red" }}
                             ></i>
                           </ToggleButton>
@@ -208,7 +219,7 @@ class detailBar extends Component {
 
 const mapStateToProps = state => {
   return {
-    wishData: state.wishlist.addedWishlist
+    wishlist: state.wishlist.addedWishlist
   };
 };
 

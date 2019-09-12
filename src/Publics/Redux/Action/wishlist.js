@@ -11,6 +11,13 @@ export const getWishlist = category => {
   };
 };
 
+export const getWishlistDetail = name => {
+  return {
+    type: "GET_WISHLIST_DETAIL",
+    payload: Axios.get(`http://192.168.100.150:5000/wishlist/${name}`)
+  };
+};
+
 export const addWishlist = data => {
   return {
     type: "ADD_WISHLIST",
