@@ -122,7 +122,7 @@ class cardCollection extends Component {
                 <Col md={4} style={{ marginBottom: 30 }} key={index}>
                   <Link
                     to={`/product/${{ ...data[index] }.name}`}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", color:'black' }}
                   >
                     <Card className="cardCollection">
                       <Card.Img

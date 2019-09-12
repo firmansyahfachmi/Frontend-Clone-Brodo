@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from "react";
+import Swal from "sweetalert2";
 import {
   Container,
   Row,
@@ -17,6 +18,9 @@ import {
   deleteWishlist
 } from "../../Publics/Redux/Action/wishlist";
 import { connect } from "react-redux";
+
+import { postCart } from '../../Publics/Redux/Action/cart.js'
+import { connect } from 'react-redux'
 
 class detailBar extends Component {
   constructor(props) {
@@ -49,16 +53,29 @@ class detailBar extends Component {
     }, 1000);
   };
 
+  addCart = (data) => {
+    
+    this.props.postCart(data)     
+
+    Swal.fire({
+      type: 'success',
+      title: 'Barang di tamabahkan ke keranjang',
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    
+  }
+  
+
   render() {
-    console.log("whislist = ", this.state.wishClass);
-    console.log("whislist data = ", this.state.wishStatus);
-    console.log("whislist data post = ", this.state.wishData);
-    console.log("whislist masuk = ", this.props.wishlist);
     return (
       <Fragment>
         <div className="pt-5" style={{ background: "#e4e4e4" }}>
           <Container className="mt-4">
             {this.props.detailProducts.map(detail => (
+             
               <Row>
                 <Col className="p-4" md={5}>
                   <div>
@@ -138,6 +155,7 @@ class detailBar extends Component {
                         <option>3</option>
                         <option>4</option>
                         <option>5</option>
+                        
                       </Form.Control>
                     </Form.Group>
                     <Form.Group>
@@ -147,6 +165,12 @@ class detailBar extends Component {
                           border: "#0b3f57",
                           width: "100%"
                         }}
+
+                        onClick = {() =>
+                          {
+                          this.addCart(detail)
+                          }
+                        }
                       >
                         TAMBAH KE KERANJANG
                       </Button>
@@ -217,10 +241,17 @@ class detailBar extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapDispatchToProps = (dispatch) => {
   return {
+    postCart: (data) => { dispatch(postCart(data)) }
+  }
+}
+       
+const mapStateToProps = state => {
+  return{
+    cart:state.cart.addedCart,
     wishlist: state.wishlist.addedWishlist
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(detailBar);
+export default connect (mapStateToProps, mapDispatchToProps) (detailBar);

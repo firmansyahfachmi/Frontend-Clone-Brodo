@@ -14,7 +14,7 @@ export const postCart = data => {
     };
 };
 
-export const deleteCart = id => {
+export const deleteCart = (id) => {
     return {
         type: "DELETE_CART",
         payload: Axios.delete(`http://192.168.100.150:5000/cart/${id}`)
