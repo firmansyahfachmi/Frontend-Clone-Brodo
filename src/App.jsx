@@ -8,6 +8,7 @@ import HomePage from "./components/page/homePage";
 import Collection from "./components/page/collection.jsx";
 import Wishlist from "./components/page/wishlist.jsx";
 import Detail from "./components/page/detail.jsx";
+import Checkout from "./components/page/checkout.jsx";
 
 import store from "./Publics/Redux/store.js";
 
@@ -20,7 +21,7 @@ const App = () => {
         <Route
           path="/"
           exact
-          render={props => {
+          render={(props) => {
             return (
               <Fragment>
                 <Header history={props.history} key={window.location.search} />
@@ -31,7 +32,7 @@ const App = () => {
         />
         <Route
           path="/collection/:status"
-          render={props => {
+          render={(props) => {
             return (
               <Fragment>
                 <Header
@@ -46,7 +47,7 @@ const App = () => {
         />
         <Route
           path="/product/:name"
-          render={props => {
+          render={(props) => {
             return (
               <Fragment>
                 <Header
@@ -59,9 +60,10 @@ const App = () => {
             );
           }}
         />
+
         <Route
           path="/wishlist/:status"
-          render={props => {
+          render={(props) => {
             return (
               <Fragment>
                 <Header
@@ -70,6 +72,22 @@ const App = () => {
                   key={window.location.search}
                 />
                 <Wishlist {...props} />
+              </Fragment>
+            );
+          }}
+        />
+        <Route
+          path="/checkout"
+          exact
+          render={(props) => {
+            return (
+              <Fragment>
+                <Header
+                  headType="white"
+                  history={props.history}
+                  key={window.location.search}
+                />
+                <Checkout {...props} />
               </Fragment>
             );
           }}
