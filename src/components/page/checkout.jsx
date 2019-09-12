@@ -33,7 +33,7 @@ export class Checkout extends Component {
   componentDidMount = async () => {
     await this.props.dispatch(getCart()).then((res) => {
       this.setState({
-        dataCart: this.props.data
+        dataCart: this.props.cart
       });
     });
   };
