@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from "react";
+import Swal from "sweetalert2";
 import {
   Container,
   Row,
@@ -13,14 +14,61 @@ import {
   ButtonToolbar
 } from "react-bootstrap";
 
+import {
+  addWishlist,
+  deleteWishlist
+} from "../../Publics/Redux/Action/wishlist";
+
+import { connect } from "react-redux";
+
+import { postCart } from "../../Publics/Redux/Action/cart.js";
+
 class detailBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      whisClass: "fa fa-heart-o"
+      wishClass: "fa fa-heart-o",
+      wishClass1: "fa fa-heart",
+      wishStatus: 0, //status sudah wishlist atau belum
+      wishId: 0, //active button or nah
+      wishData: {
+        name: "",
+        price: "",
+        image: "",
+        product_id: ""
+      },
+      wishlist: [],
+      id_product: ""
     };
   }
+
+  addWishlist = async () => {
+    setTimeout(() => {
+      this.props.addWishlist(this.state.wishData);
+    }, 1000);
+  };
+
+  deleteWishlist = async () => {
+    setTimeout(() => {
+      this.props.deleteWishlist(this.state.id_product);
+    }, 1000);
+  };
+
+  addCart = data => {
+    this.props.postCart(data);
+
+    Swal.fire({
+      type: "success",
+      title: "Barang di tamabahkan ke keranjang",
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  };
+
   render() {
+    console.log(this.props);
     return (
       <Fragment>
         <div className="pt-5" style={{ background: "#e4e4e4" }}>
@@ -45,30 +93,53 @@ class detailBar extends Component {
                       <ButtonToolbar
                         style={{ float: "right", marginBottom: "20px" }}
                       >
-                        <ToggleButtonGroup type="checkbox">
+                        <ToggleButtonGroup
+                          type="checkbox"
+                          defaultValue={this.state.wishId}
+                        >
                           <ToggleButton
                             variant="light"
                             size="lg"
                             value={1}
                             style={{ textAlignLast: "right" }}
                             onChange={() => {
-                              if (this.state.whisClass === "fa fa-heart") {
-                                this.setState({ whisClass: "fa fa-heart-o" });
+                              if (this.state.wishStatus === 0) {
+                                this.setState({ wishClass: "fa fa-heart" });
+                                this.setState({ wishStatus: 1 });
+                                this.setState({
+                                  wishData: {
+                                    name: detail.name,
+                                    price: detail.price,
+                                    image: detail.image,
+                                    product_id: detail.id
+                                  }
+                                });
+                                this.addWishlist();
+                                console.log("posted");
                               } else {
-                                this.setState({ whisClass: "fa fa-heart" });
+                                this.setState({ wishClass: "fa fa-heart-o" });
+                                this.setState({ wishStatus: 0 });
+                                this.setState({ id_product: detail.id });
+                                this.deleteWishlist();
+                                console.log("unposted");
                               }
                             }}
                           >
-                            
-                           Add to Wishlist &nbsp;
+                            Add to Wishlist &nbsp;
                             <i
-                              className={this.state.whisClass}
+                              className={
+                                this.state.wishStatus === 1
+                                  ? this.state.wishClass1
+                                  : this.state.wishClass
+                              }
                               style={{ color: "red" }}
                             ></i>
                           </ToggleButton>
                         </ToggleButtonGroup>
                       </ButtonToolbar>
                     </Form.Group>
+                  </Form>
+                  <Form>
                     <Form.Group controlId="exampleForm.ControlSelect1" multiple>
                       <Form.Control
                         as="select"
@@ -90,6 +161,9 @@ class detailBar extends Component {
                           background: "#0b3f57",
                           border: "#0b3f57",
                           width: "100%"
+                        }}
+                        onClick={() => {
+                          this.addCart(detail);
                         }}
                       >
                         TAMBAH KE KERANJANG
@@ -160,5 +234,29 @@ class detailBar extends Component {
     );
   }
 }
-        
-export default detailBar;
+
+const mapDispatchToProps = dispatch => {
+  return {
+    postCart: data => {
+      dispatch(postCart(data));
+    },
+    addWishlist: data => {
+      dispatch(addWishlist(data));
+    },
+    deleteWishlist: data => {
+      dispatch(deleteWishlist(data));
+    }
+  };
+};
+
+const mapStateToProps = state => {
+  return {
+    cart: state.cart.addedCart,
+    wishlist: state.wishlist.addedWishlist
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(detailBar);

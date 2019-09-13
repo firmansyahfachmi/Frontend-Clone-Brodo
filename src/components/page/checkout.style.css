@@ -1,0 +1,119 @@
+table,
+th,
+tr,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.fCol {
+  flex-direction: column;
+}
+.pContainer {
+  display: flex;
+  justify-content: flex-start;
+  color: grey;
+  font-size: 14px;
+  margin: 0px 0 0 0;
+  width: 98%;
+  /* margin: auto; */
+  max-height: 500px;
+  flex-wrap: wrap;
+}
+
+.divHead {
+  background-color: #003142;
+  color: white;
+  padding: 10px 0 10px 0;
+  /* margin: 0 0 10px 0; */
+}
+.content {
+  max-height: 400px;
+}
+.pHead {
+  margin: 0 0 0 20px;
+}
+
+.dBottom {
+  background: #003142;
+  padding: 10px 0 10px 0;
+  color: aliceblue;
+  margin-top: auto;
+  /* margin-bottom: 50%; */
+  align-items: flex-end;
+}
+div.scroll {
+  width: auto;
+  height: 500px;
+  overflow-x: hidden;
+  /* overflow-x: auto; */
+  overflow-y: auto;
+  text-align: justify;
+}
+.bodyDiv {
+  flex: 1 0 423px;
+  max-width: 422px;
+  flex-direction: column;
+  /* padding: 10px; */
+  /* margin: auto; */
+  align-items: flex-start;
+  /* border-right: 4px solid grey;
+  border-left: 4px solid grey; */
+  justify-content: flex-end;
+  max-height: 500px;
+}
+
+.bodyText {
+  padding: 20px;
+}
+.cart {
+  width: 90%;
+  margin: auto;
+  align-items: center;
+}
+td {
+  padding: 10px;
+}
+
+.fragment {
+  font-size: 14px;
+  color: grey;
+}
+
+.pBlue {
+  color: #003142;
+  margin: 10px 0 0 0;
+  font-weight: 600;
+}
+
+.sinput {
+  width: 60%;
+  margin: 20px 10px 10px 10px;
+}
+
+.cart {
+  border: 2px solid grey;
+  width: 90%;
+  margin: auto;
+}
+
+.numberCircle {
+  width: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 16px;
+
+  background-color: aliceblue;
+  color: #003142;
+}
+
+.dBorder {
+  border-style: none solid solid solid;
+  border-color: aliceblue;
+  border-width: 5px;
+}
+
+.tborder {
+  border-top: solid 2px grey;
+}

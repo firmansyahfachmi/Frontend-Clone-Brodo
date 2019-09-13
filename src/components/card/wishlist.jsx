@@ -13,7 +13,7 @@ import {
   Spinner
 } from "react-bootstrap";
 
-class cardCollection extends Component {
+class cardWishlist extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,13 +23,13 @@ class cardCollection extends Component {
   }
 
   fetchMoreData = () => {
-    if (this.props.products.length < 6) {
+    if (this.props.wishlist.length < 6) {
       this.setState({
-        items: Array.from({ length: this.props.products.length })
+        items: Array.from({ length: this.props.wishlist.length })
       });
       return;
     }
-    if (this.state.items.length >= this.props.products.length) {
+    if (this.state.items.length >= this.props.wishlist.length) {
       this.setState({ hasMore: false });
       return;
     }
@@ -43,7 +43,7 @@ class cardCollection extends Component {
   };
 
   render() {
-    const data = this.props.products;
+    const data = this.props.wishlist;
     return (
       <Fragment>
         <div id="upper"></div>
@@ -51,7 +51,7 @@ class cardCollection extends Component {
           <Col>
             Menampilkan {this.state.items.length} produk (
             <b>{this.state.items.length}</b> dari{" "}
-            <b>{this.props.products.length}</b>)
+            <b>{this.props.wishlist.length}</b>)
           </Col>
         </Row>
         <Row>
@@ -117,12 +117,12 @@ class cardCollection extends Component {
           style={{ overflow: "hidden" }}
         >
           <Row style={{ marginTop: 40 }}>
-            {this.props.products.length > 0 ? (
+            {this.props.wishlist.length > 0 ? (
               this.state.items.map((a, index) => (
                 <Col md={4} style={{ marginBottom: 30 }} key={index}>
                   <Link
                     to={`/product/${{ ...data[index] }.name}`}
-                    style={{ textDecoration: "none", color:'black' }}
+                    style={{ textDecoration: "none" }}
                   >
                     <Card className="cardCollection">
                       <Card.Img
@@ -160,4 +160,4 @@ class cardCollection extends Component {
   }
 }
 
-export default cardCollection;
+export default cardWishlist;

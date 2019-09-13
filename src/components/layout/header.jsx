@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import {Navbar, Form, Nav, Button, FormControl, Row, Col, ButtonGroup} from 'react-bootstrap'
+import {Link} from "react-router-dom"
 
 import {connect} from 'react-redux'
-import { getCart, deleteCart } from '../../Publics/Redux/Action/cart.js'
+import { getCart} from '../../Publics/Redux/Action/cart.js'
 
 import './layout.css'
 
@@ -16,19 +17,14 @@ class Header extends Component{
     constructor(props){
         super(props)
         this.state = {
-            search:'',
-            dataCart: null
+            search:''
         }
         
     }
 
     componentDidMount = async () => {
         await this.props.dispatch(getCart())
-            .then(res => {
-                this.setState({
-                    dataCart: this.props.cart
-                })
-            })
+            
     }
 
     
@@ -101,21 +97,10 @@ class Header extends Component{
             search: e.target.value 
         })
 
-    
-    }
-
-    removeHandle = (id) => {
-
-        this.props.dispatch(deleteCart(id))
-
-
-    }
-
-    
+    }  
     render(){
         
-        const {dataCart} = this.state
-        console.log("kl", this.props.cart)
+        // const {dataCart} = this.state
 
         let backColor = (this.props.headType === 'white') ?  'rgb(255, 255, 255)' : 'rgba(0, 0, 0, 0.8)'
         let color = (this.props.headType === 'white') ?  '#333333' : 'rgb(255, 255, 255)'
@@ -156,7 +141,7 @@ class Header extends Component{
 
                     <Button variant="link" style={{ color:color, fontSize : 16 }}><i className="fa fa-search" onClick={this.openSearch}></i></Button>
                     <Button onClick={this.loginShow} onMouseOver={this.hoverClose} variant="link" style={{ color:color, fontSize: 16}}><i className="fa fa-user"></i></Button>
-                    <Button variant="link" style={{ color:color, fontSize: 16 }}><i className="fa fa-heart"></i></Button>
+                    <Link to="/wishlist/my wishlist"><Button variant="link" style={{ color:color, fontSize: 16 }}><i className="fa fa-heart"></i></Button></Link>
                     <Button variant="link" onClick={this.openNav} style={{ color:color, fontSize: 16 }}><i className="fa fa-shopping-cart"></i></Button>
                 </Form>
 
@@ -166,11 +151,11 @@ class Header extends Component{
                         <Nav.Link href="" className="closebtn" onClick={this.closeNav}>x</Nav.Link>
                     </div>
                     <Row className="ml-3 mr-3 mb-2">
-                        {(dataCart === null) ? 
+                        {(this.props.cart.length === 0) ? 
                         <Col className="border-bottom a">KERANJANG KOSONG</Col>
                         :
-                        <Col className="border-bottom">
-                            <div><Cart data={dataCart} handler={this.removeHandle}/></div>
+                        <Col>
+                            <div><Cart data={this.props.cart} /></div>
                         </Col>
                         }
                     </Row>
@@ -179,17 +164,17 @@ class Header extends Component{
                         <Col>
                             <Row style={{marginBottom:10}}>
                                 <Col style={{ border: '1px solid black', padding: 6 }}>Total
-                                    <span style={{ float:'right'}}>Rp</span>
+                                    <span style={{ float:'right'}}>Rp. {this.props.total} </span>
                                 </Col>
                             </Row>
                             <Row>
-                                {(dataCart === null)?
-                                <Col style={{padding:0}}><Button block>BELANJA SEKARANG BRO</Button></Col>
+                                {(this.props.cart.length === 0)?
+                                    <Col style={{ padding: 0 }}><a href='/collection/all' style={{textDecoration:'none'}}><Button block>BELANJA SEKARANG BRO</Button></a></Col>
                                 :
                                 <Col style={{ padding: 0}} className="bg-danger">
                                     <ButtonGroup style={{ width:'100%'}}>
                                         <Button variant="secondary">KERANJANG</Button>
-                                        <Button >BAYAR</Button>
+                                        <Button > <Nav.Link href="/checkout" style={{color:"white"}}>BAYAR</Nav.Link></Button>
                                     </ButtonGroup>
                                 </Col>
                                 }
@@ -199,7 +184,7 @@ class Header extends Component{
                     </Row>
                     
                 </div>
-                <div id="over" className="overlay"></div>
+                <div id="over" onClick={this.closeNav} className="overlay"></div>
                 <div id="over2" className="overlay2"></div>
             </Navbar>
 
@@ -209,8 +194,8 @@ class Header extends Component{
                         <div className="col-lg-2">
                             <ul type="none">
                                 <li><Nav.Link href="/collection/inspirasi" className="border-bottom linkNav"><b>Inspirasi</b></Nav.Link></li>
-                            <li><Nav.Link href="/collection/outfit kerja" className="border-bottom linkNav">Outfit Kerja</Nav.Link></li>
-                            <li><Nav.Link href="/collection/outfit travel" className="linkNav">Outfit Travel</Nav.Link></li>
+                            <li><Nav.Link href="/collection/kerja" className="border-bottom linkNav">Outfit Kerja</Nav.Link></li>
+                            <li><Nav.Link href="/collection/travel" className="linkNav">Outfit Travel</Nav.Link></li>
                             </ul>
                         </div>
                         <div className="col-md-3">
@@ -222,12 +207,12 @@ class Header extends Component{
                             </ul>
                         </div>
                         <div className="col-lg-1">
-                        <Nav.Link href="/collection/sandal" className="linkNav"><b>Sandal</b></Nav.Link>
+                        <Nav.Link href="/collection/sandals" className="linkNav"><b>Sandal</b></Nav.Link>
                         </div>
                         <div className="col-lg-2">
                             <ul type="none">
                             <li><Nav.Link href="/collection/aksesoris" className="border-bottom linkNav"><b>Aksesoris</b></Nav.Link></li>
-                            <li><Nav.Link href="/collection/grooming" className="linkNav">Grooming</Nav.Link></li>
+                            <li><Nav.Link href="/collection/parfume" className="linkNav">Grooming</Nav.Link></li>
                             </ul>
                         </div>
                         <div className="col-lg-2">
@@ -286,7 +271,8 @@ class Header extends Component{
 
 const mapStateToProps = state =>{
     return {
-        cart:state.cart.addedCart
+        cart:state.cart.addedCart,
+        total:state.cart.total
     }
 }
 
