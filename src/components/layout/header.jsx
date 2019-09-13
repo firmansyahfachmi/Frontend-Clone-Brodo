@@ -125,7 +125,7 @@ class Header extends Component{
 
                     <Nav.Link href="" style={{ color:color}}>Jurnal</Nav.Link>
                     <Nav.Link href="" style={{ color:color}}>Tentang Kami</Nav.Link>
-                    <Nav.Link href="" style={{ color:color}}>Toko Kami</Nav.Link>
+                    <Nav.Link href="/pages/our-store" style={{ color:color}}>Toko Kami</Nav.Link>
                 </Nav>
 
                 <Form inline>
