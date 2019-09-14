@@ -5,12 +5,21 @@
 </p>
 
 ## Related Project
+express JS (https://github.com/rozy97/cloning-brodo-backend.git)
 
 ## Introduction
+
+Brodo is the first direct-to-consumer shoe company in Indonesia that offers a variety of high-quality product lines, ranging from formal and casual shoes, as well as sneakers and boots.
+
 
 ## Requirements
   - NPM (Node Package Manager)
   - React-JS
+ 
+## Screenshot
+<p align='center'>
+  
+</p>
   
 ## Contributors
 
