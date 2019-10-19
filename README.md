@@ -4,6 +4,13 @@
   <img src="https://cf.shopee.co.id/file/527af9f99556ff79cb1eee9da241f96a" width="450"/>
 </p>
 
+<br/><br/>
+
+<a href="#">
+  <img src="https://img.shields.io/badge/ReactJS-16.10-blue.svg?style=flat-square" alt="npm version">
+</a>
+
+
 ## Related Project
 express JS (https://github.com/rozy97/cloning-brodo-backend.git)
 
