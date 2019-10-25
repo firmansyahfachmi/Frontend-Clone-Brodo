@@ -1,68 +1,74 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Clone Brodo Website</h1>
 
-## Available Scripts
+<p align="center">
+  <img src="https://cf.shopee.co.id/file/527af9f99556ff79cb1eee9da241f96a" width="450"/>
+</p>
 
-In the project directory, you can run:
+<br/><br/>
 
-### `npm start`
+<a href="#">
+  <img src="https://img.shields.io/badge/ReactJS-16.10-blue.svg?style=flat-square" alt="npm version">
+</a>
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Related Project
+express JS (https://github.com/rozy97/cloning-brodo-backend.git)
 
-### `npm test`
+## Introduction
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Brodo is the first direct-to-consumer shoe company in Indonesia that offers a variety of high-quality product lines, ranging from formal and casual shoes, as well as sneakers and boots.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Requirements
+  - NPM (Node Package Manager)
+  - React-JS
+ 
+## Screenshot
+  <p align="center">
+    <span>
+      <img src="https://user-images.githubusercontent.com/52324743/65371999-37be4e00-dc94-11e9-8fc3-d59f8147c9cf.jpg" width="400px" />&nbsp;&nbsp;&nbsp;
+      <img src="https://user-images.githubusercontent.com/52324743/65372087-989a5600-dc95-11e9-900f-3fd3dec778e0.jpg" width="400px" />
+    </span>
+    
+  </p>
+  <p align="center">
+    <span>
+       <img src="https://user-images.githubusercontent.com/52324743/65372096-b23b9d80-dc95-11e9-8e7f-31c712898bce.jpg" width="800px" />
+    </span>
+  </p>
+  <p align="center">
+    <span>
+       <img src="https://user-images.githubusercontent.com/52324743/65372174-b320ff00-dc96-11e9-9729-ee4e07744324.JPG" width="800px" />
+    </span>
+  </p>
+  
+## Contributors
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<table border="0">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/firmansyahfachmi">
+        <img width="110" src="https://avatars1.githubusercontent.com/firmansyahfachmi" alt="M Fachmi Firmansyah"><br/>
+          <sub><b>M Fachmi Firmansyah</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/mahendragalih26">
+        <img width="110" src="https://avatars1.githubusercontent.com/mahendragalih26" alt="Galih Mahendra W"><br/>
+          <sub><b>Galih Mahendra W</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/rozy97">
+        <img width="110" src="https://avatars1.githubusercontent.com/rozy97" alt="Firmansyah Rozy"><br/>
+          <sub><b>Firmansyah Rozy</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/fikribasa">
+        <img width="110" src="https://avatars1.githubusercontent.com/fikribasa" alt="M Fikri Basa"><br/>
+          <sub><b>M Fikri Basa</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
