@@ -139,11 +139,11 @@ class cardWishlist extends Component {
                           style={{
                             color: "#e06100",
                             fontWeight: "600",
-                            fontSize: 18
+                            fontSize: 17
                           }}
                         >
                           {}
-                          Rp. <span>{{ ...data[index] }.price}</span>
+                          Rp. {{ ...data[index] }.price}
                         </Card.Text>
                       </Card.Body>
                     </Card>

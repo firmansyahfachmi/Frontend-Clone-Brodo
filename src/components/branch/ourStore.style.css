@@ -25,8 +25,9 @@
 h4 {
   font-weight: bold;
 }
+
 span {
-  font-size: 12px;
+  /* font-size: 12px; */
 }
 
 .map {

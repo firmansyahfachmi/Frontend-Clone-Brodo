@@ -13,8 +13,9 @@ const CarouselBar = props => {
     case "main":
       return (
         <MDBCarousel
+          style={{ height: 550 }}
           activeItem={1}
-          length={3}
+          length={2}
           showControls={true}
           showIndicators={true}
           className="z-depth-1"
@@ -24,7 +25,7 @@ const CarouselBar = props => {
               <MDBView>
                 <img
                   className="d-block w-100"
-                  src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/499-web-banner-0.png"
+                  src="//cdn.shopify.com/s/files/1/0256/2398/6281/files/BRD_2263_1_3024x.jpg?v=1571407391 3024w"
                   alt="First slide"
                 />
               </MDBView>
@@ -33,17 +34,8 @@ const CarouselBar = props => {
               <MDBView>
                 <img
                   className="d-block w-100"
-                  src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/097-banner-2.004.jpeg"
+                  src="//cdn.shopify.com/s/files/1/0256/2398/6281/files/BRD_2404_ok_1_-min_3024x.jpg"
                   alt="Second slide"
-                />
-              </MDBView>
-            </MDBCarouselItem>
-            <MDBCarouselItem itemId="3">
-              <MDBView>
-                <img
-                  className="d-block w-100"
-                  src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/904-untitled.001.jpeg"
-                  alt="Third slide"
                 />
               </MDBView>
             </MDBCarouselItem>

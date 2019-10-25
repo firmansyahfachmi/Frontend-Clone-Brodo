@@ -9,6 +9,7 @@ td {
 .fCol {
   flex-direction: column;
 }
+
 .pContainer {
   display: flex;
   justify-content: flex-start;
@@ -27,9 +28,11 @@ td {
   padding: 10px 0 10px 0;
   /* margin: 0 0 10px 0; */
 }
+
 .content {
   max-height: 400px;
 }
+
 .pHead {
   margin: 0 0 0 20px;
 }
@@ -42,6 +45,7 @@ td {
   /* margin-bottom: 50%; */
   align-items: flex-end;
 }
+
 div.scroll {
   width: auto;
   height: 500px;
@@ -50,6 +54,7 @@ div.scroll {
   overflow-y: auto;
   text-align: justify;
 }
+
 .bodyDiv {
   flex: 1 0 423px;
   max-width: 422px;
@@ -66,11 +71,13 @@ div.scroll {
 .bodyText {
   padding: 20px;
 }
+
 .cart {
   width: 90%;
   margin: auto;
   align-items: center;
 }
+
 td {
   padding: 10px;
 }

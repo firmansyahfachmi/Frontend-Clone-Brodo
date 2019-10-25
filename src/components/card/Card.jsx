@@ -4,6 +4,17 @@ import { Link } from "react-router-dom";
 
 const cardBar = props => {
   const type = props.type;
+
+  const styles = {
+    card1: {
+      objectFit: "cover",
+      height: 300
+    },
+    card2: {
+      objectFit: "cover",
+      height: 250
+    }
+  };
   switch (type) {
     case "card":
       return (
@@ -11,18 +22,21 @@ const cardBar = props => {
           <div className="pl-3 pr-3">
             <CardDeck style={{ paddingTop: "20px", paddingBottom: "20px" }}>
               <Card>
-                <Link to="/home">
+                <Link to="/collection/signature">
                   <Card.Img
+                    style={styles.card1}
                     variant="top"
-                    src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/333-ez-big-banner.jpg"
+                    src="//cdn.shopify.com/s/files/1/0256/2398/6281/files/BRD_0966_1_-min_3024x.jpg"
                   />
                 </Link>
               </Card>
               <Card>
-                <Link to="/home">
+                <Link to="/collection/watch">
                   <Card.Img
+                    style={styles.card1}
                     variant="top"
-                    src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/793-brodotimekaaeepr.jpg"
+                    src="
+                    //cdn.shopify.com/s/files/1/0256/2398/6281/collections/BRD_1879_1728x.jpg"
                   />
                 </Link>
               </Card>
@@ -36,26 +50,30 @@ const cardBar = props => {
           <div className="pl-3 pr-3">
             <CardDeck style={{ paddingTop: "20px", paddingBottom: "20px" }}>
               <Card>
-                <Link to="/home">
+                <Link to="/collection/signature">
                   <Card.Img
+                    style={styles.card2}
                     variant="top"
-                    src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/490-signore-low-series-banner-kecil.jpg"
+                    src="//cdn.shopify.com/s/files/1/0256/2398/6281/files/BRD_0123_3024x.JPG"
                   />
                 </Link>
               </Card>
               <Card>
-                <Link to="/home">
+                <Link to="">
                   <Card.Img
+                    style={styles.card2}
                     variant="top"
-                    src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/373-raijin-fujin.jpg"
+                    src="//cdn.shopify.com/s/files/1/0256/2398/6281/files/DSC09402_ok_3024x.jpg"
                   />
                 </Link>
               </Card>
               <Card>
-                <Link to="/home">
+                <Link to="/collection/boots">
                   <Card.Img
+                    style={styles.card2}
                     variant="top"
-                    src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/760-boots-banner-kecil.jpg"
+                    src="
+                    //cdn.shopify.com/s/files/1/0256/2398/6281/collections/BRD_9924_1728x.jpg"
                   />
                 </Link>
               </Card>

@@ -10,7 +10,7 @@ import Wishlist from "./components/page/wishlist.jsx";
 import Detail from "./components/page/detail.jsx";
 import AboutUs from "./components/page/aboutus.jsx";
 import Checkout from "./components/page/checkout.jsx";
-
+import OurStore from "./components/page/ourStore.page.jsx";
 
 import store from "./Publics/Redux/store.js";
 
@@ -23,7 +23,7 @@ const App = () => {
         <Route
           path="/"
           exact
-          render={(props) => {
+          render={props => {
             return (
               <Fragment>
                 <Header history={props.history} key={window.location.search} />
@@ -34,7 +34,7 @@ const App = () => {
         />
         <Route
           path="/collection/:status"
-          render={(props) => {
+          render={props => {
             return (
               <Fragment>
                 <Header
@@ -49,7 +49,7 @@ const App = () => {
         />
         <Route
           path="/product/:name"
-          render={(props) => {
+          render={props => {
             return (
               <Fragment>
                 <Header
@@ -65,7 +65,7 @@ const App = () => {
 
         <Route
           path="/pages/about-us"
-            render={(props) => {
+          render={props => {
             return (
               <Fragment>
                 <Header
@@ -73,15 +73,15 @@ const App = () => {
                   history={props.history}
                   key={window.location.search}
                 />
-               <AboutUs {...props} />
+                <AboutUs {...props} />
               </Fragment>
             );
           }}
         />
-        
+
         <Route
           path="/wishlist/:status"
-          render={(props) => {
+          render={props => {
             return (
               <Fragment>
                 <Header
@@ -94,10 +94,10 @@ const App = () => {
             );
           }}
         />
-        
+
         <Route
           path="/pages/our-store"
-           render={(props) => {
+          render={props => {
             return (
               <Fragment>
                 <Header
@@ -105,16 +105,16 @@ const App = () => {
                   history={props.history}
                   key={window.location.search}
                 />
-                 <OurStore {...props} />
-                 </Fragment>
+                <OurStore {...props} />
+              </Fragment>
             );
           }}
         />
 
-         <Route
+        <Route
           path="/checkout"
           exact
-          render={(props) => {
+          render={props => {
             return (
               <Fragment>
                 <Header
@@ -122,8 +122,8 @@ const App = () => {
                   history={props.history}
                   key={window.location.search}
                 />
-                 <Checkout {...props} />
-                  </Fragment>
+                <Checkout {...props} />
+              </Fragment>
             );
           }}
         />

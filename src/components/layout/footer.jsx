@@ -11,7 +11,7 @@ const Footer = () => {
             <Col md={2}>
               <Link to="/" className="testing">
                 <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png"
+                  src="//cdn.shopify.com/s/files/1/0256/2398/6281/files/logo_baru_1_a9072036-bb02-413f-b024-244e60a7bb7f_120x.png"
                   alt="icon"
                   style={{
                     backgroundSize: "100px 33px !important",

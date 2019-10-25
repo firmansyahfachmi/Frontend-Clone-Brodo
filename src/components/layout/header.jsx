@@ -104,7 +104,7 @@ class Header extends Component{
 
         let backColor = (this.props.headType === 'white') ?  'rgb(255, 255, 255)' : 'rgba(0, 0, 0, 0.8)'
         let color = (this.props.headType === 'white') ?  '#333333' : 'rgb(255, 255, 255)'
-        let image = (this.props.headType === 'white') ?  'https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-active.png' : 'https://s3-ap-southeast-1.amazonaws.com/bucket-brodo/icon/logo-brodo-new-inactive.png'
+        let image = (this.props.headType === 'white') ?  '//cdn.shopify.com/s/files/1/0256/2398/6281/files/LOGO_BRODO-01_120x.png' : '//cdn.shopify.com/s/files/1/0256/2398/6281/files/logo_baru_1_a9072036-bb02-413f-b024-244e60a7bb7f_120x.png'
         let border = (this.props.headType === 'white') ?  'border' : ''
 
     return(
@@ -124,7 +124,7 @@ class Header extends Component{
                     <Nav.Link onMouseOver={this.hover} style={{ color:color, marginBottom: -7}}>Kategori</Nav.Link>
 
                     <Nav.Link href="" style={{ color:color}}>Jurnal</Nav.Link>
-                    <Nav.Link href="" style={{ color:color}}>Tentang Kami</Nav.Link>
+                    <Nav.Link href="/pages/about-us" style={{ color:color}}>Tentang Kami</Nav.Link>
                     <Nav.Link href="/pages/our-store" style={{ color:color}}>Toko Kami</Nav.Link>
                 </Nav>
 
